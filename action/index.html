@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept B — Action-First</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'SF Pro Text','Helvetica Neue',sans-serif;background:#0B1120;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 16px;
+  background-image:radial-gradient(ellipse 80% 60% at 70% 20%,rgba(124,58,237,.06) 0%,transparent 60%)}
+
+.label{text-align:center;margin-bottom:14px;font-family:'DM Sans',sans-serif}
+.label .tag{font-size:10px;font-weight:700;letter-spacing:3px;color:#00A688;margin-bottom:5px}
+.label h1{font-size:26px;font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:3px}
+.label .sub{font-size:12px;color:#64748B;font-weight:500}
+.label .badge{display:inline-block;margin-top:10px;padding:5px 14px;border-radius:20px;background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.2);font-size:10px;font-weight:700;color:#A78BFA;letter-spacing:.3px}
+.label .hint{display:block;margin-top:8px;font-size:10px;color:#475569;font-weight:500}
+
+.device{width:320px;background:#1C1C1E;border-radius:44px;padding:10px;box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.06);position:relative}
+.notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:100px;height:26px;background:#1C1C1E;border-radius:0 0 18px 18px;z-index:10}
+.screen{background:#fff;border-radius:36px;overflow:hidden;display:flex;flex-direction:column;height:660px}
+
+.sbar{display:flex;justify-content:space-between;align-items:center;padding:16px 24px 2px;font-size:14px;font-weight:600;flex-shrink:0;z-index:5;position:relative}
+.sbar-r{display:flex;gap:5px;align-items:center}
+.sbar-r .p{width:17px;height:11px;background:#000;border-radius:2px}
+.sbar-r .b{width:24px;height:12px;background:#000;border-radius:3px}
+
+.tnav{display:flex;justify-content:space-between;align-items:center;padding:6px 16px 10px;flex-shrink:0}
+.tn-g{font-size:12px;color:#999;font-weight:500}
+.tn-n{font-size:16px;font-weight:700;color:#111;margin-top:1px}
+.tn-r{display:flex;gap:8px;align-items:center}
+.tn-b{width:32px;height:32px;border-radius:50%;background:#F3F4F6;display:flex;align-items:center;justify-content:center}
+.tn-b svg{width:16px;height:16px}
+.tn-a{width:32px;height:32px;border-radius:50%;background:#D1D5DB;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff}
+
+.scroll{flex:1;overflow-y:auto;background:#F9FAFB;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.hs{overflow-x:auto;scrollbar-width:none}
+.hs::-webkit-scrollbar{display:none}
+
+.tbar{display:flex;justify-content:space-around;align-items:center;padding:8px 4px 22px;border-top:1px solid #E5E7EB;flex-shrink:0;background:#fff}
+.tb{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;font-weight:500;color:#9CA3AF;min-width:48px}
+.tb.on{color:#2563EB}
+.tb svg{width:21px;height:21px}
+
+.sec{display:flex;justify-content:space-between;align-items:center;padding:14px 16px 6px}
+.sec h3{font-size:14px;font-weight:700;color:#111}
+.sec .lnk{font-size:11px;font-weight:600;color:#2563EB}
+
+.txr{display:flex;align-items:center;padding:10px 16px;gap:11px}
+.txi{width:36px;height:36px;border-radius:10px;background:#F3F4F6;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.txi svg{width:16px;height:16px}
+.txd{flex:1}
+.txn{font-size:13px;font-weight:600;color:#111}
+.txt{font-size:10px;color:#999;margin-top:1px}
+.txa{font-size:13px;font-weight:700;text-align:right;color:#111}
+.txa.pos{color:#10B981}
+.sep{height:1px;background:#F3F4F6;margin:0 16px}
+.wc{margin:0 16px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;overflow:hidden}
+
+.fmt{padding:2px 10px;font-size:8px;font-weight:700;letter-spacing:.6px;margin:8px 16px 2px;display:inline-block;color:#7C3AED}
+
+.story{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;cursor:pointer;transition:transform .15s}
+.story:active{transform:scale(.93)}
+.story-ring{width:56px;height:56px;border-radius:50%;padding:2.5px;transition:background .3s}
+.story-ring.active{background:conic-gradient(#2563EB 0%,#7C3AED 50%,#2563EB 100%)}
+.story-ring.seen{background:#D1D5DB}
+.story-inner{width:100%;height:100%;border-radius:50%;background:#fff;padding:2px;display:flex;align-items:center;justify-content:center}
+.story-fill{width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.story-lbl{font-size:9px;font-weight:500;transition:color .3s}
+.story.active .story-lbl{color:#666}
+.story.seen .story-lbl{color:#bbb}
+</style>
+</head>
+<body>
+
+<div class="label">
+  <div class="tag">CONCEPT B</div>
+  <h1>Action-First</h1>
+  <div class="sub">Quick Actions · Task-Oriented</div>
+  <div class="badge">◉ Instagram-Style Stories Strip</div>
+  <span class="hint">👆 Tap stories to mark as viewed / unviewed</span>
+</div>
+
+<div class="device"><div class="notch"></div><div class="screen">
+  <div class="sbar"><span>9:41</span><div class="sbar-r"><div class="p"></div><div class="b"></div></div></div>
+  <div class="tnav">
+    <div><div class="tn-g">Good morning</div><div class="tn-n">Ani Harutyunyan</div></div>
+    <div class="tn-r">
+      <div class="tn-b"><svg viewBox="0 0 20 20" fill="none" stroke="#555" stroke-width="1.6"><circle cx="9" cy="9" r="6"/><path d="M16 16l-3-3"/></svg></div>
+      <div class="tn-b"><svg viewBox="0 0 20 20" fill="none" stroke="#555" stroke-width="1.6"><path d="M14 7A4 4 0 006 7c0 5-2 6.5-2 6.5h12S14 12 14 7"/><path d="M11.5 15a1.5 1.5 0 01-3 0"/></svg></div>
+      <div class="tn-a">AH</div>
+    </div>
+  </div>
+  <div class="scroll">
+
+    <!-- Big Actions -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:8px 16px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 4px;border-radius:14px;background:#fff;border:1px solid #E5E7EB"><div style="width:42px;height:42px;border-radius:12px;background:#F3F4F6;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#2563EB" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg></div><span style="font-size:11px;font-weight:600;color:#333">Transfer</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 4px;border-radius:14px;background:#fff;border:1px solid #E5E7EB"><div style="width:42px;height:42px;border-radius:12px;background:#F3F4F6;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#10B981" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/></svg></div><span style="font-size:11px;font-weight:600;color:#333">Pay</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 4px;border-radius:14px;background:#fff;border:1px solid #E5E7EB"><div style="width:42px;height:42px;border-radius:12px;background:#F3F4F6;display:flex;align-items:center;justify-content:center"><div style="width:20px;height:20px;border-radius:4px;background:#D1D5DB"></div></div><span style="font-size:11px;font-weight:600;color:#333">Top-Up</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 4px;border-radius:14px;background:#fff;border:1px solid #E5E7EB"><div style="width:42px;height:42px;border-radius:12px;background:#F3F4F6;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#EC4899" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg></div><span style="font-size:11px;font-weight:600;color:#333">QR</span></div>
+    </div>
+
+    <!-- Mini balance -->
+    <div style="margin:6px 16px;padding:14px 16px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center">
+      <div><div style="font-size:10px;color:#999">Total Balance</div><div style="font-size:20px;font-weight:800;color:#111">1,245,800 ֏</div></div>
+      <span style="font-size:11px;font-weight:600;color:#2563EB">Details →</span>
+    </div>
+
+    <!-- Stories -->
+    <div class="fmt">◉ STORIES STRIP — tap to view</div>
+    <div id="stories" class="hs" style="display:flex;gap:12px;padding:6px 16px"></div>
+
+    <!-- Recipients -->
+    <div class="sec"><h3>Send Again</h3><span class="lnk">All →</span></div>
+    <div class="hs" style="display:flex;gap:14px;padding:2px 16px 8px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="width:44px;height:44px;border-radius:50%;background:#818CF8;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff">AP</div><span style="font-size:10px;color:#999">Armen</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="width:44px;height:44px;border-radius:50%;background:#F472B6;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff">MG</div><span style="font-size:10px;color:#999">Mane</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="width:44px;height:44px;border-radius:50%;background:#34D399;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff">GH</div><span style="font-size:10px;color:#999">Gor</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="width:44px;height:44px;border-radius:50%;background:#FB923C;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff">NA</div><span style="font-size:10px;color:#999">Nare</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="width:44px;height:44px;border-radius:50%;background:#F3F4F6;border:1.5px dashed #D1D5DB;display:flex;align-items:center;justify-content:center;font-size:20px;color:#999">+</div><span style="font-size:10px;color:#999">Add</span></div>
+    </div>
+
+    <!-- Upcoming -->
+    <div class="sec"><h3>Upcoming Payments</h3></div>
+    <div class="wc">
+      <div class="txr"><div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg></div><div class="txd"><div class="txn">Ucom Mobile</div><div class="txt">Due: Mar 5</div></div><div class="txa">−6,000 ֏</div></div>
+      <div class="sep"></div>
+      <div class="txr"><div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><rect x="5" y="2" width="10" height="16" rx="2"/><path d="M9 15h2"/></svg></div><div class="txd"><div class="txn">Netflix</div><div class="txt">Due: Mar 10</div></div><div class="txa">−4,500 ֏</div></div>
+      <div class="sep"></div>
+      <div class="txr"><div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M3 8l7-5 7 5"/><path d="M5 7v8a1 1 0 001 1h3v-4h2v4h3a1 1 0 001-1V7"/></svg></div><div class="txd"><div class="txn">Rent Payment</div><div class="txt">Due: Mar 15</div></div><div class="txa">−85,000 ֏</div></div>
+    </div>
+    <div style="height:16px"></div>
+  </div>
+
+  <div class="tbar">
+    <div class="tb on"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7-5 7 5"/><path d="M5 7v8a1 1 0 001 1h3v-4h2v4h3a1 1 0 001-1V7"/></svg>Home</div>
+    <div class="tb"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg>Payments</div>
+    <div class="tb"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/><path d="M5 12h4"/></svg>Cards</div>
+    <div class="tb"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg>History</div>
+    <div class="tb"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="7" r="3.5"/><path d="M4 17a7 7 0 0112 0"/></svg>Profile</div>
+  </div>
+</div></div>
+
+<script>
+const S=[
+  {label:'New Card',bg:'#DBEAFE',seen:false},
+  {label:'Mortgage',bg:'#FEF3C7',seen:false},
+  {label:'Travel',bg:'#D1FAE5',seen:false},
+  {label:'Student',bg:'#FCE7F3',seen:true},
+  {label:'Deposit',bg:'#EDE9FE',seen:true},
+];
+function render(){
+  document.getElementById('stories').innerHTML=S.map((s,i)=>`
+    <div class="story ${s.seen?'seen':'active'}" onclick="S[${i}].seen=!S[${i}].seen;render()">
+      <div class="story-ring ${s.seen?'seen':'active'}"><div class="story-inner"><div class="story-fill" style="background:${s.bg}"><div style="width:18px;height:18px;border-radius:9px;background:rgba(0,0,0,.08)"></div></div></div></div>
+      <span class="story-lbl">${s.label}</span>
+    </div>`).join('');
+}
+render();
+</script>
+</body>
+</html>
