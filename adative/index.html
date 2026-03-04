@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept C — Adaptive / AI</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'SF Pro Text','Helvetica Neue',sans-serif;background:#0B1120;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 16px;
+  background-image:radial-gradient(ellipse 80% 60% at 40% 20%,rgba(16,185,129,.06) 0%,transparent 60%)}
+
+.label{text-align:center;margin-bottom:14px;font-family:'DM Sans',sans-serif}
+.label .tag{font-size:10px;font-weight:700;letter-spacing:3px;color:#00A688;margin-bottom:5px}
+.label h1{font-size:26px;font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:3px}
+.label .sub{font-size:12px;color:#64748B;font-weight:500}
+.label .badge{display:inline-block;margin-top:10px;padding:5px 14px;border-radius:20px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.2);font-size:10px;font-weight:700;color:#6EE7B7;letter-spacing:.3px}
+.label .hint{display:block;margin-top:8px;font-size:10px;color:#475569;font-weight:500}
+
+.device{width:320px;background:#1C1C1E;border-radius:44px;padding:10px;box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.06);position:relative}
+.notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:100px;height:26px;background:#1C1C1E;border-radius:0 0 18px 18px;z-index:10}
+.screen{background:#fff;border-radius:36px;overflow:hidden;display:flex;flex-direction:column;height:660px}
+
+.sbar{display:flex;justify-content:space-between;align-items:center;padding:16px 24px 2px;font-size:14px;font-weight:600;flex-shrink:0;z-index:5;position:relative}
+.sbar-r{display:flex;gap:5px;align-items:center}
+.sbar-r .p{width:17px;height:11px;background:#000;border-radius:2px}
+.sbar-r .b{width:24px;height:12px;background:#000;border-radius:3px}
+
+.tnav{display:flex;justify-content:space-between;align-items:center;padding:6px 16px 10px;flex-shrink:0}
+.tn-g{font-size:12px;color:#999;font-weight:500}
+.tn-n{font-size:16px;font-weight:700;color:#111;margin-top:1px}
+.tn-r{display:flex;gap:8px;align-items:center}
+.tn-b{width:32px;height:32px;border-radius:50%;background:#F3F4F6;display:flex;align-items:center;justify-content:center}
+.tn-b svg{width:16px;height:16px}
+.tn-a{width:32px;height:32px;border-radius:50%;background:#D1D5DB;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff}
+
+.scroll{flex:1;overflow-y:auto;background:#F9FAFB;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+
+.tbar{display:flex;justify-content:space-around;align-items:center;padding:8px 4px 22px;border-top:1px solid #E5E7EB;flex-shrink:0;background:#fff}
+.tb{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;font-weight:500;color:#9CA3AF;min-width:48px}
+.tb.on{color:#2563EB}
+.tb svg{width:21px;height:21px}
+
+.sec{display:flex;justify-content:space-between;align-items:center;padding:14px 16px 6px}
+.sec h3{font-size:14px;font-weight:700;color:#111}
+.sec .lnk{font-size:11px;font-weight:600;color:#2563EB}
+
+.txr{display:flex;align-items:center;padding:10px 16px;gap:11px}
+.txi{width:36px;height:36px;border-radius:10px;background:#F3F4F6;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.txi svg{width:16px;height:16px}
+.txd{flex:1}
+.txn{font-size:13px;font-weight:600;color:#111}
+.txt{font-size:10px;color:#999;margin-top:1px}
+.txa{font-size:13px;font-weight:700;text-align:right;color:#111}
+.txa.pos{color:#10B981}
+.sep{height:1px;background:#F3F4F6;margin:0 16px}
+.wc{margin:0 16px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;overflow:hidden}
+
+.qa{display:flex;flex-direction:column;align-items:center;gap:5px}
+.qi{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center}
+.qa span{font-size:10px;font-weight:500;color:#666}
+
+.fmt{padding:2px 10px;font-size:8px;font-weight:700;letter-spacing:.6px;margin:8px 16px 2px;display:inline-block;color:#059669}
+
+.icard{margin:5px 16px;padding:13px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;display:flex;gap:11px;align-items:flex-start;transition:opacity .35s,transform .35s,max-height .4s ease,margin .4s,padding .4s}
+.icard.gone{opacity:0;transform:translateX(30px);max-height:0;margin:0 16px;padding:0 13px;overflow:hidden;pointer-events:none}
+.dismiss{cursor:pointer;padding:3px;opacity:.35;flex-shrink:0;transition:opacity .15s;border:none;background:none}
+.dismiss:hover{opacity:.7}
+
+.empty{margin:8px 16px;padding:22px;border-radius:14px;background:#fff;border:1px dashed #D1D5DB;text-align:center;display:none}
+.empty p{font-size:12px;color:#999;font-weight:500}
+.rbtn{font-size:11px;font-weight:600;color:#2563EB;margin-top:8px;cursor:pointer;background:none;border:none;font-family:inherit}
+.rbtn:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="label">
+  <div class="tag">CONCEPT C</div>
+  <h1>Adaptive / AI</h1>
+  <div class="sub">Contextual Intelligence</div>
+  <div class="badge">▣ Contextual Inline Cards</div>
+  <span class="hint">👆 Tap ✕ to dismiss cards · Reset to bring them back</span>
+</div>
+
+<div class="device"><div class="notch"></div><div class="screen">
+  <div class="sbar"><span>9:41</span><div class="sbar-r"><div class="p"></div><div class="b"></div></div></div>
+  <div class="tnav">
+    <div><div class="tn-g">Good morning</div><div class="tn-n">Ani Harutyunyan</div></div>
+    <div class="tn-r">
+      <div class="tn-b"><svg viewBox="0 0 20 20" fill="none" stroke="#555" stroke-width="1.6"><path d="M14 7A4 4 0 006 7c0 5-2 6.5-2 6.5h12S14 12 14 7"/><path d="M11.5 15a1.5 1.5 0 01-3 0"/></svg></div>
+      <div class="tn-a">AH</div>
+    </div>
+  </div>
+  <div class="scroll">
+
+    <!-- AI Bar -->
+    <div style="margin:8px 16px;padding:12px 14px;border-radius:13px;background:#F0FDF4;border:1px solid #A7F3D0;display:flex;align-items:center;gap:10px">
+      <svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="#059669" stroke-width="1.4"><path d="M10 2l1.5 5.5L17 9l-5.5 1.5L10 16l-1.5-5.5L3 9l5.5-1.5z"/></svg>
+      <div><div style="font-size:9px;font-weight:700;color:#059669;letter-spacing:.5px;text-transform:uppercase">AI Insight</div><div style="font-size:12px;font-weight:600;color:#065F46;margin-top:2px">Spending is 15% lower than last month</div></div>
+    </div>
+
+    <!-- Balance -->
+    <div style="margin:6px 16px;padding:14px 16px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center">
+      <div><div style="font-size:10px;color:#999">Total Balance</div><div style="font-size:20px;font-weight:800;color:#111">1,245,800 ֏</div></div>
+      <span style="font-size:11px;font-weight:600;color:#2563EB">Details →</span>
+    </div>
+
+    <!-- Suggested actions -->
+    <div class="sec"><h3>Suggested for You</h3><span class="lnk" style="color:#059669">✨ AI</span></div>
+    <div style="display:flex;justify-content:space-around;padding:4px 16px 6px">
+      <div class="qa"><div class="qi" style="background:#F0FDF4;border:1.5px solid #A7F3D0"><div style="width:16px;height:16px;border-radius:4px;background:rgba(0,0,0,.06)"></div></div><span>→ Mane</span></div>
+      <div class="qa"><div class="qi" style="background:#FEF3C7;border:1.5px solid #FDE68A"><div style="width:16px;height:16px;border-radius:4px;background:rgba(0,0,0,.06)"></div></div><span>Ucom</span></div>
+      <div class="qa"><div class="qi" style="background:#EFF6FF;border:1.5px solid #BFDBFE"><div style="width:16px;height:16px;border-radius:4px;background:rgba(0,0,0,.06)"></div></div><span>Card Bill</span></div>
+      <div class="qa"><div class="qi" style="background:#F5F3FF;border:1.5px solid #DDD6FE"><div style="width:16px;height:16px;border-radius:4px;background:rgba(0,0,0,.06)"></div></div><span>QR Pay</span></div>
+    </div>
+
+    <!-- Cards header -->
+    <div style="display:flex;justify-content:space-between;align-items:center;margin:8px 16px 2px">
+      <span class="fmt" style="margin:0;padding:0">▣ INLINE CARDS — tap ✕ to dismiss</span>
+      <button id="rbtn" class="rbtn" style="display:none" onclick="reset()">Reset ↺</button>
+    </div>
+
+    <!-- Inline cards -->
+    <div id="cards">
+      <div class="icard" data-id="1">
+        <div style="width:36px;height:36px;border-radius:10px;background:#FEF3C7;display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:15px;height:15px;border-radius:3px;background:rgba(0,0,0,.08)"></div></div>
+        <div style="flex:1"><div style="font-size:9px;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:.3px;margin-bottom:2px">⏰ Upcoming Bill</div><div style="font-size:13px;font-weight:700;color:#111;margin-bottom:2px">Ucom — Mar 5, 6,000 ֏</div><div style="font-size:10px;color:#999;line-height:1.4">Based on your payment history, this bill is due soon.</div><span style="font-size:11px;font-weight:600;color:#2563EB;margin-top:6px;display:inline-block">Pay Now →</span></div>
+        <button class="dismiss" onclick="dismiss(this)"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
+      </div>
+      <div class="icard" data-id="2">
+        <div style="width:36px;height:36px;border-radius:10px;background:#D1FAE5;display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:15px;height:15px;border-radius:3px;background:rgba(0,0,0,.08)"></div></div>
+        <div style="flex:1"><div style="font-size:9px;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:.3px;margin-bottom:2px">💰 Saving Opportunity</div><div style="font-size:13px;font-weight:700;color:#111;margin-bottom:2px">You saved 42,000 ֏ this month</div><div style="font-size:10px;color:#999;line-height:1.4">You're ahead of pace — move to savings?</div><span style="font-size:11px;font-weight:600;color:#2563EB;margin-top:6px;display:inline-block">Transfer →</span></div>
+        <button class="dismiss" onclick="dismiss(this)"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
+      </div>
+      <div class="icard" data-id="3">
+        <div style="width:36px;height:36px;border-radius:10px;background:#EFF6FF;display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:15px;height:15px;border-radius:3px;background:rgba(0,0,0,.08)"></div></div>
+        <div style="flex:1"><div style="font-size:9px;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:.3px;margin-bottom:2px">🎯 Personalized Offer</div><div style="font-size:13px;font-weight:700;color:#111;margin-bottom:2px">Personal Loan at 9.5%</div><div style="font-size:10px;color:#999;line-height:1.4">Pre-approved based on your account history.</div><span style="font-size:11px;font-weight:600;color:#2563EB;margin-top:6px;display:inline-block">Learn More →</span></div>
+        <button class="dismiss" onclick="dismiss(this)"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
+      </div>
+    </div>
+    <div id="empty" class="empty">
+      <p>All caught up! No suggestions right now.</p>
+      <button class="rbtn" onclick="reset()">Reset cards ↺</button>
+    </div>
+
+    <!-- Smart Feed -->
+    <div class="sec"><h3>Smart Feed ✨</h3><span class="lnk">All →</span></div>
+    <div class="wc">
+      <div class="txr"><div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg></div><div class="txd"><div class="txn">SAS Supermarket</div><div class="txt">Today, 14:32 · <span style="color:#059669">Groceries</span></div></div><div class="txa">−12,400 ֏</div></div>
+      <div class="sep"></div>
+      <div class="txr"><div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 10h10M12 6l4 4-4 4"/></svg></div><div class="txd"><div class="txn">Salary Deposit</div><div class="txt">Yesterday, 10:00</div></div><div class="txa pos">+350,000 ֏</div></div>
+    </div>
+    <div style="height:16px"></div>
+  </div>
+
+  <div class="tbar">
+    <div class="tb on"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7-5 7 5"/><path d="M5 7v8a1 1 0 001 1h3v-4h2v4h3a1 1 0 001-1V7"/></svg>Home</div>
+    <div class="tb"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg>Payments</div>
+    <div class="tb"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/><path d="M5 12h4"/></svg>Cards</div>
+    <div class="tb"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg>History</div>
+    <div class="tb"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="7" r="3.5"/><path d="M4 17a7 7 0 0112 0"/></svg>Profile</div>
+  </div>
+</div></div>
+
+<script>
+const orig=document.getElementById('cards').innerHTML;
+let n=3;
+function dismiss(btn){
+  const c=btn.closest('.icard');c.classList.add('gone');n--;
+  setTimeout(()=>{c.remove();check()},400);
+}
+function check(){
+  document.getElementById('rbtn').style.display=n<3?'inline':'none';
+  if(n===0)document.getElementById('empty').style.display='block';
+}
+function reset(){
+  document.getElementById('cards').innerHTML=orig;
+  document.getElementById('empty').style.display='none';
+  document.getElementById('rbtn').style.display='none';
+  n=3;
+}
+</script>
+</body>
+</html>
