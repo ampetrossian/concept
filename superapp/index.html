@@ -65,10 +65,10 @@ body{font-family:-apple-system,'SF Pro Text','Helvetica Neue',sans-serif;backgro
 
 .fmt{padding:2px 10px;font-size:8px;font-weight:700;letter-spacing:.6px;margin:8px 16px 2px;display:inline-block;color:#EA580C}
 
-.ct{flex-shrink:0;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;border:none;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:inherit}
-.ct.on{background:#2563EB;color:#fff}
-.ct:not(.on){background:#fff;color:#999;box-shadow:inset 0 0 0 1px #E5E7EB}
-.ct:not(.on):hover{color:#555}
+.ct{flex-shrink:0;padding:6px 14px;border-radius:20px;font-size:10px;font-weight:600;border:none;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:inherit;letter-spacing:.3px}
+.ct.on{background:rgba(255,255,255,.15);color:#fff}
+.ct:not(.on){background:transparent;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.1)}
+.ct:not(.on):hover{color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.2)}
 </style>
 </head>
 <body>
@@ -77,8 +77,8 @@ body{font-family:-apple-system,'SF Pro Text','Helvetica Neue',sans-serif;backgro
   <div class="tag">CONCEPT D</div>
   <h1>Super-App</h1>
   <div class="sub">Banking + Lifestyle Hub</div>
-  <div class="badge">⇄ Swipeable Carousel + Interactive Tabs</div>
-  <span class="hint">👆 Tap category tabs to switch content: All, Invest, Travel, Subscriptions</span>
+  <div class="badge">⇄ Portfolio Hero Card + Interactive Tabs</div>
+  <span class="hint">👆 Tap tabs inside the dark card: Invest, Crypto, BNPL, Travel</span>
 </div>
 
 <div class="device"><div class="notch"></div><div class="screen">
@@ -92,22 +92,43 @@ body{font-family:-apple-system,'SF Pro Text','Helvetica Neue',sans-serif;backgro
   </div>
   <div class="scroll">
 
-    <!-- Balance -->
-    <div style="margin:8px 16px;padding:14px 16px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center">
-      <div><div style="font-size:10px;color:#999">Total Balance</div><div style="font-size:20px;font-weight:800;color:#111">1,245,800 ֏</div></div>
-      <span style="font-size:11px;font-weight:600;color:#2563EB">Details →</span>
+    <!-- ★ PORTFOLIO HERO CARD (dark, with tabs inside) -->
+    <div id="hero" style="margin:8px 16px;padding:18px 16px 12px;border-radius:18px;background:#1C1C1E;color:#fff;position:relative;overflow:hidden">
+      <!-- Subtle glow -->
+      <div style="position:absolute;top:-30px;right:-20px;width:100px;height:100px;border-radius:50%;background:rgba(16,185,129,.08)"></div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
+        <div>
+          <div style="font-size:9px;font-weight:600;letter-spacing:1.5px;color:rgba(255,255,255,.45);text-transform:uppercase;margin-bottom:5px">Portfolio</div>
+          <div id="hero-port" style="font-size:26px;font-weight:800;letter-spacing:-.5px">֏ 318,400</div>
+          <div style="font-size:11px;color:#10B981;font-weight:600;margin-top:3px">▲ +2.4% this week</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:9px;font-weight:600;letter-spacing:1.5px;color:rgba(255,255,255,.45);text-transform:uppercase;margin-bottom:5px">Crypto</div>
+          <div style="font-size:18px;font-weight:800">$48.20</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:2px">0.0012 BTC</div>
+        </div>
+      </div>
+      <!-- Tabs inside dark card -->
+      <div id="tabs" style="display:flex;gap:6px"></div>
     </div>
 
-    <!-- Quick actions -->
-    <div style="display:flex;justify-content:space-around;padding:6px 16px 8px">
-      <div class="qa"><div class="qi"><svg viewBox="0 0 20 20" fill="none" stroke="#2563EB" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg></div><span>Transfer</span></div>
+    <!-- BANKING BALANCE (separate white card) -->
+    <div style="margin:6px 16px;padding:14px 16px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:9px;font-weight:600;letter-spacing:1.2px;color:#999;text-transform:uppercase;margin-bottom:3px">Banking Balance</div>
+        <div style="font-size:20px;font-weight:800;color:#111">֏ 2,450,000</div>
+      </div>
+      <span style="font-size:11px;font-weight:600;color:#2563EB">3 accounts ›</span>
+    </div>
+
+    <!-- Quick actions (5, matching reference) -->
+    <div style="display:flex;justify-content:space-around;padding:8px 12px 6px">
       <div class="qa"><div class="qi"><svg viewBox="0 0 20 20" fill="none" stroke="#10B981" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/></svg></div><span>Pay</span></div>
-      <div class="qa"><div class="qi"><div style="width:19px;height:19px;border-radius:4px;background:#D1D5DB"></div></div><span>Top-Up</span></div>
-      <div class="qa"><div class="qi"><svg viewBox="0 0 20 20" fill="none" stroke="#999" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg></div><span>QR</span></div>
+      <div class="qa"><div class="qi"><svg viewBox="0 0 20 20" fill="none" stroke="#2563EB" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg></div><span>Transfer</span></div>
+      <div class="qa"><div class="qi"><div style="width:19px;height:19px;border-radius:4px;background:#D1D5DB"></div></div><span>Split</span></div>
+      <div class="qa"><div class="qi"><svg viewBox="0 0 20 20" fill="none" stroke="#999" stroke-width="1.4"><path d="M17 3L9 11M17 3l-4 14-3-6-6-3z"/></svg></div><span>Travel</span></div>
+      <div class="qa"><div class="qi"><svg viewBox="0 0 20 20" fill="none" stroke="#F59E0B" stroke-width="1.6"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" transform="scale(.85) translate(1.5,1.5)"/></svg></div><span>Exchange</span></div>
     </div>
-
-    <!-- INTERACTIVE TABS -->
-    <div id="tabs" class="hs" style="display:flex;gap:6px;padding:6px 16px"></div>
 
     <!-- Dynamic sections -->
     <div id="widget"></div>
@@ -129,37 +150,54 @@ body{font-family:-apple-system,'SF Pro Text','Helvetica Neue',sans-serif;backgro
 </div></div>
 
 <script>
-const T=['All','Invest','Travel','Subscriptions'];
-let A='All';
+const T=['Invest','Crypto','BNPL','Travel'];
+let A='Invest';
+
+// Hero card data per tab
+const H={
+  Invest:{port:'֏ 318,400',sub:'▲ +2.4% this week',crypto:'$48.20',csub:'0.0012 BTC'},
+  Crypto:{port:'֏ 318,400',sub:'▲ +2.4% this week',crypto:'$48.20',csub:'0.0012 BTC'},
+  BNPL:{port:'֏ 318,400',sub:'▲ +2.4% this week',crypto:'$48.20',csub:'0.0012 BTC'},
+  Travel:{port:'֏ 318,400',sub:'▲ +2.4% this week',crypto:'$48.20',csub:'0.0012 BTC'},
+};
 
 const D={
-  All:{
-    w:`<div style="margin:6px 16px;padding:13px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
-      <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:13px;font-weight:700;color:#111">📈 Investments</span><span style="font-size:12px;font-weight:700;color:#10B981">+2.4% ↑</span></div>
-      <div style="display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid #F3F4F6"><span style="font-size:12px;color:#555">ACBA Bonds</span><span style="font-size:12px;font-weight:700;color:#10B981">+1.8%</span></div>
-      <div style="display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid #F3F4F6"><span style="font-size:12px;color:#555">S&amp;P 500 ETF</span><span style="font-size:12px;font-weight:700;color:#10B981">+3.2%</span></div>
-      <div style="display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid #F3F4F6"><span style="font-size:12px;color:#555">Gold Fund</span><span style="font-size:12px;font-weight:700;color:#EF4444">−0.5%</span></div></div>`,
-    c:[['#DBEAFE','Travel Insurance','From ֏2,500'],['#FEF3C7','Life Insurance','Protect family'],['#D1FAE5','Subscriptions','Netflix, Spotify']],
-    lt:'Active Subscriptions',ll:'Manage →',
-    r:[['Netflix Premium','Renews Mar 10','−4,500 ֏'],['Spotify Family','Renews Mar 22','−3,200 ֏']]
-  },
   Invest:{
     w:`<div style="margin:6px 16px;padding:13px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
-      <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:13px;font-weight:700">Portfolio Value</span><span style="font-size:12px;font-weight:700;color:#10B981">+2.4%</span></div>
-      <div style="font-size:24px;font-weight:800;color:#111;margin-bottom:8px">438,200 ֏</div>
-      <div style="display:flex;gap:4px;height:30px">
+      <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:13px;font-weight:700">Your Holdings</span><span style="font-size:12px;font-weight:700;color:#10B981">+2.4%</span></div>
+      <div style="display:flex;gap:4px;height:30px;margin-bottom:6px">
         <div style="width:40%;border-radius:4px;background:#2563EB"></div>
         <div style="width:25%;border-radius:4px;background:#10B981"></div>
         <div style="width:20%;border-radius:4px;background:#F59E0B"></div>
         <div style="width:15%;border-radius:4px;background:#D1D5DB"></div></div>
-      <div style="display:flex;gap:10px;margin-top:6px">
+      <div style="display:flex;gap:10px">
         <span style="display:flex;align-items:center;gap:3px;font-size:9px;color:#666"><span style="width:7px;height:7px;border-radius:2px;background:#2563EB;display:inline-block"></span>Bonds</span>
         <span style="display:flex;align-items:center;gap:3px;font-size:9px;color:#666"><span style="width:7px;height:7px;border-radius:2px;background:#10B981;display:inline-block"></span>Equity</span>
         <span style="display:flex;align-items:center;gap:3px;font-size:9px;color:#666"><span style="width:7px;height:7px;border-radius:2px;background:#F59E0B;display:inline-block"></span>Gold</span>
         <span style="display:flex;align-items:center;gap:3px;font-size:9px;color:#666"><span style="width:7px;height:7px;border-radius:2px;background:#D1D5DB;display:inline-block"></span>Cash</span></div></div>`,
     c:[['#DBEAFE','ACBA Bonds','7.2% annual'],['#D1FAE5','Green Fund','ESG investing'],['#FEF3C7','Gold ETF','Hedge inflation']],
-    lt:'Your Holdings',ll:'All →',
+    lt:'Investment Activity',ll:'All →',
     r:[['ACBA Bonds','Purchased Jan 2026','+1.8%'],['S&P 500 ETF','Purchased Dec 2025','+3.2%']]
+  },
+  Crypto:{
+    w:`<div style="margin:6px 16px;padding:13px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
+      <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:13px;font-weight:700">Crypto Wallet</span><span style="font-size:12px;font-weight:700;color:#10B981">+5.1%</span></div>
+      <div style="display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid #F3F4F6"><span style="font-size:12px;color:#555">Bitcoin (BTC)</span><span style="font-size:12px;font-weight:700;color:#10B981">$48.20</span></div>
+      <div style="display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid #F3F4F6"><span style="font-size:12px;color:#555">Ethereum (ETH)</span><span style="font-size:12px;font-weight:700;color:#10B981">$12.60</span></div>
+      <div style="display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid #F3F4F6"><span style="font-size:12px;color:#555">USDT</span><span style="font-size:12px;font-weight:700;color:#666">$25.00</span></div></div>`,
+    c:[['#FEF3C7','Buy Bitcoin','From ֏1,000'],['#EDE9FE','Earn Rewards','Staking 4.2%'],['#D1FAE5','Swap Tokens','Zero fees']],
+    lt:'Recent Crypto',ll:'All →',
+    r:[['BTC Purchase','Feb 28','−֏18,500'],['ETH Received','Feb 20','+$12.60']]
+  },
+  BNPL:{
+    w:`<div style="margin:6px 16px;padding:13px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
+      <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:13px;font-weight:700">Buy Now, Pay Later</span></div>
+      <div style="font-size:12px;color:#555;margin-bottom:8px">Available credit: <span style="font-weight:700;color:#111">֏ 500,000</span></div>
+      <div style="height:8px;border-radius:4px;background:#F3F4F6;overflow:hidden"><div style="width:35%;height:100%;background:#2563EB;border-radius:4px"></div></div>
+      <div style="font-size:9px;color:#999;margin-top:4px">35% used · ֏175,000 outstanding</div></div>`,
+    c:[['#DBEAFE','Tech & Gadgets','0% for 6 mo'],['#FEF3C7','Home & Living','Split in 4'],['#FCE7F3','Fashion','3 mo interest-free']],
+    lt:'Active Installments',ll:'Manage →',
+    r:[['MacBook Air M4','4 of 12 payments','−28,000 ֏/mo'],['iPhone 16 Pro','2 of 4 payments','−62,000 ֏/mo']]
   },
   Travel:{
     w:`<div style="margin:6px 16px;padding:13px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
@@ -170,21 +208,6 @@ const D={
     c:[['#DBEAFE','Travel Insurance','From ֏2,500'],['#FEF3C7','Airport Lounge','Priority Pass'],['#D1FAE5','Currency Exchange','Best EUR rates']],
     lt:'Travel Services',ll:'→',
     r:[['Travel Insurance','Milan trip cover','−8,500 ֏'],['FX Alert Set','EUR < 420 ֏','Active']]
-  },
-  Subscriptions:{
-    w:`<div style="margin:6px 16px;padding:13px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
-      <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:13px;font-weight:700">Monthly Total</span><span style="font-size:15px;font-weight:800;color:#111">−13,700 ֏</span></div>
-      <div style="display:flex;gap:3px;height:10px;border-radius:5px;overflow:hidden">
-        <div style="width:33%;background:#EF4444"></div>
-        <div style="width:23%;background:#10B981"></div>
-        <div style="width:44%;background:#2563EB"></div></div>
-      <div style="display:flex;gap:10px;margin-top:6px">
-        <span style="display:flex;align-items:center;gap:3px;font-size:9px;color:#666"><span style="width:7px;height:7px;border-radius:2px;background:#EF4444;display:inline-block"></span>Netflix</span>
-        <span style="display:flex;align-items:center;gap:3px;font-size:9px;color:#666"><span style="width:7px;height:7px;border-radius:2px;background:#10B981;display:inline-block"></span>Spotify</span>
-        <span style="display:flex;align-items:center;gap:3px;font-size:9px;color:#666"><span style="width:7px;height:7px;border-radius:2px;background:#2563EB;display:inline-block"></span>Ucom</span></div></div>`,
-    c:[['#FEE2E2','YouTube Premium','Ad-free viewing'],['#D1FAE5','Duolingo Plus','Learn languages'],['#EDE9FE','iCloud 200GB','Apple storage']],
-    lt:'Active Subscriptions',ll:'Manage →',
-    r:[['Netflix Premium','Renews Mar 10','−4,500 ֏'],['Spotify Family','Renews Mar 22','−3,200 ֏'],['Ucom Unlimited','Renews Mar 5','−6,000 ֏']]
   }
 };
 
