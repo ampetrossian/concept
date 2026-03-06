@@ -3,122 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ACBA Digital — Interactive Homepage Concepts</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>ACBA Digital — All 4 Homepage Concepts</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',-apple-system,sans-serif;background:#0B1120;min-height:100vh;-webkit-font-smoothing:antialiased;
+body{font-family:-apple-system,'SF Pro Text','Helvetica Neue',sans-serif;background:#0B1120;min-height:100vh;-webkit-font-smoothing:antialiased;
   background-image:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(0,166,136,.05) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 90%,rgba(37,99,235,.04) 0%,transparent 60%)}
 
 /* ─── Header ─── */
-.hdr{text-align:center;padding:52px 24px 36px}
-.hdr .ey{font-size:11px;font-weight:700;letter-spacing:3.5px;color:#00A688;margin-bottom:14px}
-.hdr h1{font-size:34px;font-weight:800;color:#fff;letter-spacing:-.8px;margin-bottom:10px}
-.hdr p{font-size:14px;color:#94A3B8;max-width:540px;margin:0 auto;line-height:1.65}
-.hdr .hint{display:inline-block;margin-top:14px;padding:7px 16px;border-radius:20px;background:rgba(0,166,136,.1);border:1px solid rgba(0,166,136,.2);font-size:11px;font-weight:600;color:#00A688}
+.hdr{text-align:center;padding:48px 24px 32px;font-family:'DM Sans',sans-serif}
+.hdr .ey{font-size:11px;font-weight:700;letter-spacing:3.5px;color:#00A688;margin-bottom:12px}
+.hdr h1{font-size:32px;font-weight:800;color:#fff;letter-spacing:-.8px;margin-bottom:8px}
+.hdr p{font-size:14px;color:#94A3B8;max-width:520px;margin:0 auto;line-height:1.6}
+.hdr .hint{display:inline-block;margin-top:12px;padding:7px 16px;border-radius:20px;background:rgba(0,166,136,.1);border:1px solid rgba(0,166,136,.2);font-size:11px;font-weight:600;color:#00A688}
 
 /* ─── Grid ─── */
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:0 24px 80px;max-width:1400px;margin:0 auto}
-@media(max-width:1280px){.grid{grid-template-columns:repeat(2,1fr);gap:32px;max-width:740px}}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:0 20px 60px;max-width:1360px;margin:0 auto}
+@media(max-width:1280px){.grid{grid-template-columns:repeat(2,1fr);gap:28px;max-width:700px}}
 @media(max-width:680px){.grid{grid-template-columns:1fr;max-width:340px}}
 .col{display:flex;flex-direction:column;align-items:center}
 
 /* ─── Concept Label ─── */
-.clbl{text-align:center;margin-bottom:10px}
-.clbl .tg{font-size:10px;font-weight:700;letter-spacing:2.5px;color:#00A688;margin-bottom:4px}
-.clbl h2{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.3px;margin-bottom:2px}
-.clbl .sb{font-size:11px;color:#64748B;font-weight:500}
-.fbadge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:20px;font-size:9px;font-weight:700;letter-spacing:.5px;margin-bottom:12px}
+.clbl{text-align:center;margin-bottom:8px;font-family:'DM Sans',sans-serif}
+.clbl .tg{font-size:9px;font-weight:700;letter-spacing:2.5px;color:#00A688;margin-bottom:3px}
+.clbl h2{font-size:16px;font-weight:800;color:#fff;letter-spacing:-.3px;margin-bottom:2px}
+.clbl .sb{font-size:10px;color:#64748B;font-weight:500}
+.fb{display:inline-flex;align-items:center;padding:4px 11px;border-radius:18px;font-size:9px;font-weight:700;letter-spacing:.4px;margin-bottom:10px}
 
-/* ─── Device Frame ─── */
-.device{width:100%;max-width:290px;background:#222;border-radius:40px;padding:9px;box-shadow:0 20px 50px rgba(0,0,0,.5),inset 0 0 0 1px rgba(255,255,255,.06);position:relative}
-.screen{background:#fff;border-radius:32px;overflow:hidden;display:flex;flex-direction:column;height:620px}
-.notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:90px;height:24px;background:#222;border-radius:0 0 16px 16px;z-index:10}
+/* ─── Device ─── */
+.device{width:100%;max-width:300px;background:#1C1C1E;border-radius:42px;padding:9px;box-shadow:0 24px 60px rgba(0,0,0,.5),inset 0 0 0 1px rgba(255,255,255,.06);position:relative}
+.notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:92px;height:24px;background:#1C1C1E;border-radius:0 0 16px 16px;z-index:10}
+.screen{background:#fff;border-radius:34px;overflow:hidden;display:flex;flex-direction:column;height:620px}
 
-/* ─── In-Phone UI (system font) ─── */
-.screen,.screen *{font-family:-apple-system,'SF Pro Text','Helvetica Neue',sans-serif}
+/* ─── In-Phone UI ─── */
+.sb{display:flex;justify-content:space-between;align-items:center;padding:14px 22px 2px;font-size:13px;font-weight:600;flex-shrink:0;z-index:5;position:relative}
+.sb-r{display:flex;gap:4px;align-items:center}
+.sb-r i{display:block;background:#000;border-radius:2px}
+.sb-r .p{width:16px;height:10px}
+.sb-r .b{width:22px;height:11px;border-radius:3px}
 
-.sbar{display:flex;justify-content:space-between;align-items:center;padding:14px 22px 2px;font-size:13px;font-weight:600;flex-shrink:0;z-index:5;position:relative}
-.sbar-r{display:flex;gap:4px;align-items:center}
-.sbar-r .pill{width:16px;height:10px;background:#000;border-radius:2px}
-.sbar-r .batt{width:22px;height:11px;background:#000;border-radius:3px}
+.tn{display:flex;justify-content:space-between;align-items:center;padding:5px 14px 8px;flex-shrink:0}
+.tn-g{font-size:11px;color:#999;font-weight:500}
+.tn-n{font-size:15px;font-weight:700;color:#111;margin-top:1px}
+.tn-r{display:flex;gap:6px;align-items:center}
+.tn-b{width:30px;height:30px;border-radius:50%;background:#F3F4F6;display:flex;align-items:center;justify-content:center}
+.tn-b svg{width:14px;height:14px}
+.tn-a{width:30px;height:30px;border-radius:50%;background:#D1D5DB;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
 
-.tnav{display:flex;justify-content:space-between;align-items:center;padding:6px 14px 8px;flex-shrink:0}
-.tn-greet{font-size:11px;color:#999;font-weight:500}
-.tn-name{font-size:15px;font-weight:700;color:#111;margin-top:1px}
-.tn-right{display:flex;gap:7px;align-items:center}
-.tn-btn{width:30px;height:30px;border-radius:50%;background:#F3F4F6;display:flex;align-items:center;justify-content:center}
-.tn-btn svg{width:15px;height:15px}
-.tn-av{width:30px;height:30px;border-radius:50%;background:#D1D5DB;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff}
+.sc{flex:1;overflow-y:auto;background:#F9FAFB;scrollbar-width:none}
+.sc::-webkit-scrollbar{display:none}
+.hs{overflow-x:auto;scrollbar-width:none}
+.hs::-webkit-scrollbar{display:none}
 
-.scroll{flex:1;overflow-y:auto;background:#F9FAFB;scrollbar-width:none}
-.scroll::-webkit-scrollbar{display:none}
-.hscroll{overflow-x:auto;scrollbar-width:none}
-.hscroll::-webkit-scrollbar{display:none}
+/* Tab bar */
+.tb{display:flex;justify-content:space-around;align-items:center;padding:6px 2px 18px;border-top:1px solid #E5E7EB;flex-shrink:0;background:#fff}
+.ti{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;font-weight:500;color:#9CA3AF;min-width:42px}
+.ti.on{color:#2563EB}
+.ti svg{width:19px;height:19px}
 
-/* ─── Tab Bar ─── */
-.tbar{display:flex;justify-content:space-around;align-items:center;padding:7px 2px 18px;border-top:1px solid #E5E7EB;flex-shrink:0;background:#fff}
-.tbi{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;font-weight:500;color:#9CA3AF;min-width:44px}
-.tbi.on{color:#2563EB}
-.tbi svg{width:20px;height:20px}
+/* Shared */
+.sh{display:flex;justify-content:space-between;align-items:center;padding:11px 14px 4px}
+.sh h3{font-size:12px;font-weight:700;color:#111}
+.sh .lk{font-size:10px;font-weight:600;color:#2563EB}
 
-/* ─── Shared Components ─── */
-.sec{display:flex;justify-content:space-between;align-items:center;padding:12px 14px 5px}
-.sec h3{font-size:13px;font-weight:700;color:#111}
-.sec .lnk{font-size:10px;font-weight:600;color:#2563EB}
+.tr{display:flex;align-items:center;padding:8px 14px;gap:9px}
+.tx{width:32px;height:32px;border-radius:9px;background:#F3F4F6;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tx svg{width:14px;height:14px}
+.td{flex:1}
+.tn2{font-size:11px;font-weight:600;color:#111}
+.tt{font-size:9px;color:#999;margin-top:1px}
+.ta{font-size:11px;font-weight:700;text-align:right;color:#111}
+.ta.pos{color:#10B981}
+.sp{height:1px;background:#F3F4F6;margin:0 14px}
+.wc{margin:0 14px;border-radius:12px;background:#fff;border:1px solid #E5E7EB;overflow:hidden}
 
-.txr{display:flex;align-items:center;padding:9px 14px;gap:10px}
-.txi{width:34px;height:34px;border-radius:10px;background:#F3F4F6;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.txi svg{width:15px;height:15px}
-.txd{flex:1}
-.txn{font-size:12px;font-weight:600;color:#111}
-.txt{font-size:9.5px;color:#999;margin-top:1px}
-.txa{font-size:12px;font-weight:700;text-align:right;color:#111}
-.txa.pos{color:#10B981}
-.sep{height:1px;background:#F3F4F6;margin:0 14px}
+.qa{display:flex;flex-direction:column;align-items:center;gap:4px}
+.qi{width:40px;height:40px;border-radius:11px;background:#F3F4F6;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center}
+.qi svg{width:17px;height:17px}
+.qa span{font-size:9px;font-weight:500;color:#666}
 
-.wcard{margin:0 14px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;overflow:hidden}
+.fm{padding:1px 8px;font-size:7px;font-weight:700;letter-spacing:.5px;margin:6px 14px 1px;display:inline-block}
 
-.qa{display:flex;flex-direction:column;align-items:center;gap:5px}
-.qa-ic{width:42px;height:42px;border-radius:12px;background:#F3F4F6;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center}
-.qa-ic svg{width:18px;height:18px}
-.qa span{font-size:9.5px;font-weight:500;color:#666}
+/* Interactive: eye */
+.eye{cursor:pointer;padding:5px;border-radius:7px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;transition:background .15s}
+.eye:hover{background:rgba(255,255,255,.25)}
 
-.fmt{padding:2px 10px;font-size:8px;font-weight:700;letter-spacing:.5px;margin:8px 14px 2px;display:inline-block}
+/* Interactive: stories */
+.st{display:flex;flex-direction:column;align-items:center;gap:3px;flex-shrink:0;cursor:pointer;transition:transform .15s}
+.st:active{transform:scale(.93)}
+.sr{width:48px;height:48px;border-radius:50%;padding:2px;transition:background .3s}
+.sr.a{background:conic-gradient(#2563EB 0%,#7C3AED 50%,#2563EB 100%)}
+.sr.s{background:#D1D5DB}
+.si{width:100%;height:100%;border-radius:50%;background:#fff;padding:2px;display:flex;align-items:center;justify-content:center}
+.sf{width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.sl{font-size:8px;font-weight:500;transition:color .3s}
 
-/* ─── Interactive Elements ─── */
-.eye-btn{cursor:pointer;padding:6px;border-radius:8px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center}
-.eye-btn:hover{background:rgba(255,255,255,.25)}
+/* Interactive: dismiss cards */
+.ic{margin:4px 14px;padding:10px;border-radius:12px;background:#fff;border:1px solid #E5E7EB;display:flex;gap:9px;align-items:flex-start;transition:opacity .35s,transform .35s,max-height .4s,margin .4s,padding .4s}
+.ic.gone{opacity:0;transform:translateX(20px);max-height:0;margin:0 14px;padding:0 10px;overflow:hidden;pointer-events:none}
+.dm{cursor:pointer;padding:2px;opacity:.3;flex-shrink:0;border:none;background:none;transition:opacity .15s}
+.dm:hover{opacity:.7}
+.empty{margin:6px 14px;padding:16px;border-radius:12px;background:#fff;border:1px dashed #D1D5DB;text-align:center;display:none}
+.empty p{font-size:10px;color:#999}
+.rbtn{font-size:9px;font-weight:600;color:#2563EB;margin-top:5px;cursor:pointer;background:none;border:none;font-family:inherit}
 
-.story{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;cursor:pointer;transition:transform .15s}
-.story:active{transform:scale(.93)}
-.story-ring{width:52px;height:52px;border-radius:50%;padding:2.5px;transition:background .3s}
-.story-ring.active{background:conic-gradient(#2563EB 0%,#7C3AED 50%,#2563EB 100%)}
-.story-ring.seen{background:#D1D5DB}
-.story-inner{width:100%;height:100%;border-radius:50%;background:#fff;padding:2px;display:flex;align-items:center;justify-content:center}
-.story-fill{width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.story-lbl{font-size:9px;font-weight:500;color:#666;transition:color .3s}
-.story.viewed .story-lbl{color:#bbb}
-
-.icard{margin:5px 14px;padding:12px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;display:flex;gap:10px;align-items:flex-start;transition:opacity .3s,transform .3s,max-height .4s,margin .3s,padding .3s}
-.icard.dismissed{opacity:0;transform:translateX(20px);max-height:0;margin:0 14px;padding:0 12px;overflow:hidden;pointer-events:none}
-.icard .dismiss{cursor:pointer;padding:2px;opacity:.35;flex-shrink:0;transition:opacity .15s}
-.icard .dismiss:hover{opacity:.7}
-
-.cattab{flex-shrink:0;padding:5px 13px;border-radius:18px;font-size:10px;font-weight:600;border:none;cursor:pointer;transition:all .2s;white-space:nowrap}
-.cattab.on{background:#2563EB;color:#fff;box-shadow:none}
-.cattab:not(.on){background:#fff;color:#999;box-shadow:inset 0 0 0 1px #E5E7EB}
-.cattab:not(.on):hover{color:#666}
-
-.empty-state{margin:8px 14px;padding:20px;border-radius:14px;background:#fff;border:1px dashed #D1D5DB;text-align:center}
-.empty-state p{font-size:11px;color:#999;font-weight:500}
-.reset-btn{font-size:10px;font-weight:600;color:#2563EB;margin-top:6px;cursor:pointer;background:none;border:none;font-family:inherit}
-.reset-btn:hover{text-decoration:underline}
+/* Interactive: D tabs */
+.ct{flex-shrink:0;padding:5px 12px;border-radius:16px;font-size:9px;font-weight:600;border:none;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:inherit;letter-spacing:.2px}
+.ct.on{background:rgba(255,255,255,.15);color:#fff}
+.ct:not(.on){background:transparent;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.1)}
+.ct:not(.on):hover{color:rgba(255,255,255,.55)}
 </style>
 </head>
 <body>
 
-<!-- ═══ HEADER ═══ -->
 <div class="hdr">
   <div class="ey">ACBA DIGITAL · HOMEPAGE REDESIGN · 2026</div>
   <h1>Homepage Concepts</h1>
@@ -126,539 +122,280 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#0B1120;min-heigh
   <div class="hint">👆 Clickable: balance toggle · stories · dismiss cards · category tabs</div>
 </div>
 
-<!-- ═══ GRID ═══ -->
 <div class="grid">
 
-<!-- ══════════════════════════════════════════════════════════
-     CONCEPT A — FINANCE-FIRST
-     ══════════════════════════════════════════════════════════ -->
+<!-- ═══ TABBAR TEMPLATE (reused) ═══ -->
+
+<!-- ═══════════════════════════════════════
+     A — FINANCE-FIRST
+     ═══════════════════════════════════════ -->
 <div class="col">
   <div class="clbl"><div class="tg">CONCEPT A</div><h2>Finance-First</h2><div class="sb">Balance · Accounts · Financial State</div></div>
-  <div class="fbadge" style="background:rgba(37,99,235,.12);color:#60A5FA;border:1px solid rgba(37,99,235,.2)">★ Hero Banner</div>
+  <div class="fb" style="background:rgba(37,99,235,.12);color:#60A5FA;border:1px solid rgba(37,99,235,.2)">★ Hero Banner</div>
   <div class="device"><div class="notch"></div><div class="screen">
-    <div class="sbar"><span>9:41</span><div class="sbar-r"><div class="pill"></div><div class="batt"></div></div></div>
-    <div class="tnav">
-      <div><div class="tn-greet">Good morning</div><div class="tn-name">Ani Harutyunyan</div></div>
-      <div class="tn-right">
-        <div class="tn-btn"><svg viewBox="0 0 20 20" fill="none" stroke="#555" stroke-width="1.6"><path d="M14 7A4 4 0 006 7c0 5-2 6.5-2 6.5h12S14 12 14 7"/><path d="M11.5 15a1.5 1.5 0 01-3 0"/></svg></div>
-        <div class="tn-av">AH</div>
-      </div>
-    </div>
-    <div class="scroll">
-
-      <!-- Balance Card -->
-      <div style="margin:8px 14px;padding:18px 16px;border-radius:16px;background:#2563EB;color:#fff;position:relative">
+    <div class="sb"><span>9:41</span><div class="sb-r"><i class="p"></i><i class="b"></i></div></div>
+    <div class="tn"><div><div class="tn-g">Good morning</div><div class="tn-n">Ani Harutyunyan</div></div><div class="tn-r"><div class="tn-b"><svg viewBox="0 0 20 20" fill="none" stroke="#555" stroke-width="1.6"><path d="M14 7A4 4 0 006 7c0 5-2 6.5-2 6.5h12S14 12 14 7"/><path d="M11.5 15a1.5 1.5 0 01-3 0"/></svg></div><div class="tn-a">AH</div></div></div>
+    <div class="sc">
+      <!-- Balance hero -->
+      <div style="margin:6px 14px;padding:16px 14px;border-radius:16px;background:#2563EB;color:#fff;position:relative">
         <div style="display:flex;justify-content:space-between;align-items:flex-start">
           <div>
-            <div style="font-size:10px;opacity:.7;font-weight:500;margin-bottom:4px">Total Balance</div>
-            <div id="a-bal" style="font-size:26px;font-weight:800;letter-spacing:-.5px">1,245,800 ֏</div>
-            <div style="font-size:9.5px;opacity:.55;margin-top:4px">3 accounts · Visa ····4821</div>
+            <div style="font-size:9px;opacity:.7;font-weight:500;margin-bottom:4px">Total Balance</div>
+            <div id="a-bal" style="font-size:24px;font-weight:800;letter-spacing:-.5px">1,245,800 ֏</div>
+            <div style="font-size:9px;opacity:.5;margin-top:3px">3 accounts · Visa ····4821</div>
           </div>
-          <div class="eye-btn" onclick="toggleBalA()">
-            <svg id="a-eye" width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.6"><path d="M2 10s3-5 8-5 8 5 8 5-3 5-8 5-8-5-8-5z"/><circle cx="10" cy="10" r="2.5"/></svg>
-          </div>
+          <div class="eye" onclick="togA()"><svg id="a-eye" width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.6"><path d="M2 10s3-5 8-5 8 5 8 5-3 5-8 5-8-5-8-5z"/><circle cx="10" cy="10" r="2.5"/></svg></div>
         </div>
-        <div id="a-chips" style="display:flex;gap:6px;margin-top:12px">
-          <span style="padding:3px 9px;border-radius:8px;background:rgba(255,255,255,.15);font-size:10px;font-weight:600">AMD 845,200</span>
-          <span style="padding:3px 9px;border-radius:8px;background:rgba(255,255,255,.15);font-size:10px;font-weight:600">USD $52</span>
+        <div id="a-ch" style="display:flex;gap:5px;margin-top:10px">
+          <span style="padding:3px 8px;border-radius:7px;background:rgba(255,255,255,.15);font-size:9px;font-weight:600">AMD 845,200</span>
+          <span style="padding:3px 8px;border-radius:7px;background:rgba(255,255,255,.15);font-size:9px;font-weight:600">USD $52</span>
         </div>
       </div>
-
       <!-- Accounts -->
-      <div class="hscroll" style="display:flex;gap:7px;padding:3px 14px">
-        <div class="a-acc" style="flex-shrink:0;padding:9px 12px;border-radius:12px;background:#fff;border:1px solid #E5E7EB;min-width:110">
-          <div style="font-size:9px;color:#999;font-weight:500;margin-bottom:3px">Checking</div>
-          <div style="font-size:13px;font-weight:700;color:#111" data-val="845,200 ֏">845,200 ֏</div>
-        </div>
-        <div class="a-acc" style="flex-shrink:0;padding:9px 12px;border-radius:12px;background:#fff;border:1px solid #E5E7EB;min-width:110">
-          <div style="font-size:9px;color:#999;font-weight:500;margin-bottom:3px">Savings</div>
-          <div style="font-size:13px;font-weight:700;color:#111" data-val="380,600 ֏">380,600 ֏</div>
-        </div>
-        <div class="a-acc" style="flex-shrink:0;padding:9px 12px;border-radius:12px;background:#fff;border:1px solid #E5E7EB;min-width:110">
-          <div style="font-size:9px;color:#999;font-weight:500;margin-bottom:3px">USD</div>
-          <div style="font-size:13px;font-weight:700;color:#111" data-val="$52.10">$52.10</div>
-        </div>
+      <div class="hs" style="display:flex;gap:6px;padding:3px 14px">
+        <div class="a-ac" style="flex-shrink:0;padding:8px 11px;border-radius:10px;background:#fff;border:1px solid #E5E7EB;min-width:105"><div style="font-size:8px;color:#999;margin-bottom:2px">Checking</div><div style="font-size:12px;font-weight:700;color:#111" data-v="845,200 ֏">845,200 ֏</div></div>
+        <div class="a-ac" style="flex-shrink:0;padding:8px 11px;border-radius:10px;background:#fff;border:1px solid #E5E7EB;min-width:105"><div style="font-size:8px;color:#999;margin-bottom:2px">Savings</div><div style="font-size:12px;font-weight:700;color:#111" data-v="380,600 ֏">380,600 ֏</div></div>
+        <div class="a-ac" style="flex-shrink:0;padding:8px 11px;border-radius:10px;background:#fff;border:1px solid #E5E7EB;min-width:105"><div style="font-size:8px;color:#999;margin-bottom:2px">USD</div><div style="font-size:12px;font-weight:700;color:#111" data-v="$52.10">$52.10</div></div>
       </div>
-
       <!-- Exchange -->
-      <div style="display:flex;margin:6px 14px;border-radius:10px;border:1px solid #E5E7EB;overflow:hidden">
-        <div style="flex:1;padding:7px 6px;text-align:center;background:#fff;border-right:1px solid #E5E7EB"><div style="font-size:10px;font-weight:600;color:#111">USD</div><div style="font-size:8.5px;color:#999;margin-top:1px">387 / 391</div></div>
-        <div style="flex:1;padding:7px 6px;text-align:center;background:#fff;border-right:1px solid #E5E7EB"><div style="font-size:10px;font-weight:600;color:#111">EUR</div><div style="font-size:8.5px;color:#999;margin-top:1px">421 / 426</div></div>
-        <div style="flex:1;padding:7px 6px;text-align:center;background:#fff"><div style="font-size:10px;font-weight:600;color:#111">RUB</div><div style="font-size:8.5px;color:#999;margin-top:1px">4.15 / 4.32</div></div>
+      <div style="display:flex;margin:5px 14px;border-radius:9px;border:1px solid #E5E7EB;overflow:hidden">
+        <div style="flex:1;padding:6px;text-align:center;background:#fff;border-right:1px solid #E5E7EB"><div style="font-size:9px;font-weight:600;color:#111">USD</div><div style="font-size:8px;color:#999">387/391</div></div>
+        <div style="flex:1;padding:6px;text-align:center;background:#fff;border-right:1px solid #E5E7EB"><div style="font-size:9px;font-weight:600;color:#111">EUR</div><div style="font-size:8px;color:#999">421/426</div></div>
+        <div style="flex:1;padding:6px;text-align:center;background:#fff"><div style="font-size:9px;font-weight:600;color:#111">RUB</div><div style="font-size:8px;color:#999">4.15/4.32</div></div>
       </div>
-
-      <!-- Quick Actions -->
-      <div style="display:flex;justify-content:space-around;padding:8px 14px">
-        <div class="qa"><div class="qa-ic"><svg viewBox="0 0 20 20" fill="none" stroke="#2563EB" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg></div><span>Transfer</span></div>
-        <div class="qa"><div class="qa-ic"><svg viewBox="0 0 20 20" fill="none" stroke="#10B981" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/></svg></div><span>Payments</span></div>
-        <div class="qa"><div class="qa-ic"><div style="width:18px;height:18px;border-radius:4px;background:#D1D5DB"></div></div><span>Top-Up</span></div>
-        <div class="qa"><div class="qa-ic"><svg viewBox="0 0 20 20" fill="none" stroke="#999" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg></div><span>QR Pay</span></div>
+      <!-- Quick actions -->
+      <div style="display:flex;justify-content:space-around;padding:7px 14px">
+        <div class="qa"><div class="qi"><svg viewBox="0 0 20 20" fill="none" stroke="#2563EB" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg></div><span>Transfer</span></div>
+        <div class="qa"><div class="qi"><svg viewBox="0 0 20 20" fill="none" stroke="#10B981" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/></svg></div><span>Payments</span></div>
+        <div class="qa"><div class="qi"><div style="width:17px;height:17px;border-radius:3px;background:#D1D5DB"></div></div><span>Top-Up</span></div>
+        <div class="qa"><div class="qi"><svg viewBox="0 0 20 20" fill="none" stroke="#999" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg></div><span>QR Pay</span></div>
       </div>
-
-      <!-- Hero Banner -->
-      <div class="fmt" style="color:#2563EB">★ HERO BANNER</div>
-      <div style="margin:4px 14px;padding:14px;border-radius:14px;background:#EFF6FF;border:1px dashed #BFDBFE;position:relative">
-        <div style="position:absolute;top:8px;right:8px;background:#2563EB;color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px">−30%</div>
-        <div style="width:60px;height:14px;background:#BFDBFE;border-radius:10px;margin-bottom:6px"></div>
-        <div style="font-size:13px;font-weight:700;color:#111;margin-bottom:2px">Personal Loan at 9.5%</div>
-        <div style="font-size:10px;color:#666;line-height:1.4">Get approved in minutes. Apply from the app.</div>
+      <!-- Hero banner -->
+      <div class="fm" style="color:#2563EB">★ HERO BANNER</div>
+      <div style="margin:3px 14px;padding:12px;border-radius:12px;background:#EFF6FF;border:1px dashed #BFDBFE;position:relative">
+        <div style="position:absolute;top:7px;right:7px;background:#2563EB;color:#fff;font-size:8px;font-weight:700;padding:2px 7px;border-radius:8px">−30%</div>
+        <div style="width:50px;height:12px;background:#BFDBFE;border-radius:8px;margin-bottom:5px"></div>
+        <div style="font-size:12px;font-weight:700;color:#111;margin-bottom:2px">Personal Loan at 9.5%</div>
+        <div style="font-size:9px;color:#666;line-height:1.3">Get approved in minutes. Apply from the app.</div>
       </div>
-
       <!-- Chart -->
-      <div style="margin:8px 14px;padding:12px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
-        <div style="display:flex;justify-content:space-between;margin-bottom:8px">
-          <span style="font-size:12px;font-weight:700;color:#111">Monthly Spending</span>
-          <span style="font-size:9px;color:#999">Mar 2026</span>
-        </div>
-        <div style="display:flex;align-items:flex-end;gap:5px;height:44px">
-          <div style="flex:1;height:30%;background:#D1D5DB;border-radius:3px 3px 0 0"></div>
-          <div style="flex:1;height:50%;background:#D1D5DB;border-radius:3px 3px 0 0"></div>
-          <div style="flex:1;height:75%;background:#D1D5DB;border-radius:3px 3px 0 0"></div>
-          <div style="flex:1;height:40%;background:#D1D5DB;border-radius:3px 3px 0 0"></div>
-          <div style="flex:1;height:100%;background:#2563EB;border-radius:3px 3px 0 0"></div>
-          <div style="flex:1;height:60%;background:#D1D5DB;border-radius:3px 3px 0 0"></div>
-          <div style="flex:1;height:25%;background:#D1D5DB;border-radius:3px 3px 0 0"></div>
-        </div>
-        <div style="display:flex;gap:5px;margin-top:3px">
-          <span style="flex:1;text-align:center;font-size:8px;color:#999">M</span><span style="flex:1;text-align:center;font-size:8px;color:#999">T</span><span style="flex:1;text-align:center;font-size:8px;color:#999">W</span><span style="flex:1;text-align:center;font-size:8px;color:#999">T</span><span style="flex:1;text-align:center;font-size:8px;color:#999">F</span><span style="flex:1;text-align:center;font-size:8px;color:#999">S</span><span style="flex:1;text-align:center;font-size:8px;color:#999">S</span>
+      <div style="margin:6px 14px;padding:10px;border-radius:12px;background:#fff;border:1px solid #E5E7EB">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:11px;font-weight:700;color:#111">Monthly Spending</span><span style="font-size:8px;color:#999">Mar 2026</span></div>
+        <div style="display:flex;align-items:flex-end;gap:4px;height:38px">
+          <div style="flex:1;height:30%;background:#D1D5DB;border-radius:2px 2px 0 0"></div><div style="flex:1;height:50%;background:#D1D5DB;border-radius:2px 2px 0 0"></div><div style="flex:1;height:75%;background:#D1D5DB;border-radius:2px 2px 0 0"></div><div style="flex:1;height:40%;background:#D1D5DB;border-radius:2px 2px 0 0"></div><div style="flex:1;height:100%;background:#2563EB;border-radius:2px 2px 0 0"></div><div style="flex:1;height:60%;background:#D1D5DB;border-radius:2px 2px 0 0"></div><div style="flex:1;height:25%;background:#D1D5DB;border-radius:2px 2px 0 0"></div>
         </div>
       </div>
-
       <!-- Transactions -->
-      <div class="sec"><h3>Recent Transactions</h3><span class="lnk">See All →</span></div>
-      <div class="wcard">
-        <div class="txr"><div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg></div><div class="txd"><div class="txn">SAS Supermarket</div><div class="txt">Today, 14:32</div></div><div class="txa">−12,400 ֏</div></div>
-        <div class="sep"></div>
-        <div class="txr"><div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 10h10M12 6l4 4-4 4"/></svg></div><div class="txd"><div class="txn">Salary Deposit</div><div class="txt">Yesterday, 10:00</div></div><div class="txa pos">+350,000 ֏</div></div>
-        <div class="sep"></div>
-        <div class="txr"><div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><rect x="5" y="2" width="10" height="16" rx="2"/><path d="M9 15h2"/></svg></div><div class="txd"><div class="txn">Netflix</div><div class="txt">27 Feb</div></div><div class="txa">−4,500 ֏</div></div>
+      <div class="sh"><h3>Recent Transactions</h3><span class="lk">See All →</span></div>
+      <div class="wc">
+        <div class="tr"><div class="tx"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg></div><div class="td"><div class="tn2">SAS Supermarket</div><div class="tt">Today, 14:32</div></div><div class="ta">−12,400 ֏</div></div>
+        <div class="sp"></div>
+        <div class="tr"><div class="tx"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 10h10M12 6l4 4-4 4"/></svg></div><div class="td"><div class="tn2">Salary Deposit</div><div class="tt">Yesterday</div></div><div class="ta pos">+350,000 ֏</div></div>
+        <div class="sp"></div>
+        <div class="tr"><div class="tx"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><rect x="5" y="2" width="10" height="16" rx="2"/><path d="M9 15h2"/></svg></div><div class="td"><div class="tn2">Netflix</div><div class="tt">27 Feb</div></div><div class="ta">−4,500 ֏</div></div>
       </div>
-      <div style="height:14px"></div>
+      <div style="height:12px"></div>
     </div>
-    <!-- Tab Bar -->
-    <div class="tbar">
-      <div class="tbi on"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7-5 7 5"/><path d="M5 7v8a1 1 0 001 1h3v-4h2v4h3a1 1 0 001-1V7"/></svg>Home</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg>Payments</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/><path d="M5 12h4"/></svg>Cards</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg>History</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="7" r="3.5"/><path d="M4 17a7 7 0 0112 0"/></svg>Profile</div>
-    </div>
+    <div class="tb"><div class="ti on"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7-5 7 5"/><path d="M5 7v8a1 1 0 001 1h3v-4h2v4h3a1 1 0 001-1V7"/></svg>Home</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg>Payments</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/><path d="M5 12h4"/></svg>Cards</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg>History</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="7" r="3.5"/><path d="M4 17a7 7 0 0112 0"/></svg>Profile</div></div>
   </div></div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════
-     CONCEPT B — ACTION-FIRST
-     ══════════════════════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════
+     B — ACTION-FIRST
+     ═══════════════════════════════════════ -->
 <div class="col">
   <div class="clbl"><div class="tg">CONCEPT B</div><h2>Action-First</h2><div class="sb">Quick Actions · Task-Oriented</div></div>
-  <div class="fbadge" style="background:rgba(124,58,237,.12);color:#A78BFA;border:1px solid rgba(124,58,237,.2)">◉ Stories Strip</div>
+  <div class="fb" style="background:rgba(124,58,237,.12);color:#A78BFA;border:1px solid rgba(124,58,237,.2)">◉ Stories Strip</div>
   <div class="device"><div class="notch"></div><div class="screen">
-    <div class="sbar"><span>9:41</span><div class="sbar-r"><div class="pill"></div><div class="batt"></div></div></div>
-    <div class="tnav">
-      <div><div class="tn-greet">Good morning</div><div class="tn-name">Ani Harutyunyan</div></div>
-      <div class="tn-right">
-        <div class="tn-btn"><svg viewBox="0 0 20 20" fill="none" stroke="#555" stroke-width="1.6"><circle cx="9" cy="9" r="6"/><path d="M16 16l-3-3"/></svg></div>
-        <div class="tn-btn"><svg viewBox="0 0 20 20" fill="none" stroke="#555" stroke-width="1.6"><path d="M14 7A4 4 0 006 7c0 5-2 6.5-2 6.5h12S14 12 14 7"/><path d="M11.5 15a1.5 1.5 0 01-3 0"/></svg></div>
-        <div class="tn-av">AH</div>
+    <div class="sb"><span>9:41</span><div class="sb-r"><i class="p"></i><i class="b"></i></div></div>
+    <div class="tn"><div><div class="tn-g">Good morning</div><div class="tn-n">Ani Harutyunyan</div></div><div class="tn-r"><div class="tn-b"><svg viewBox="0 0 20 20" fill="none" stroke="#555" stroke-width="1.6"><circle cx="9" cy="9" r="6"/><path d="M16 16l-3-3"/></svg></div><div class="tn-b"><svg viewBox="0 0 20 20" fill="none" stroke="#555" stroke-width="1.6"><path d="M14 7A4 4 0 006 7c0 5-2 6.5-2 6.5h12S14 12 14 7"/><path d="M11.5 15a1.5 1.5 0 01-3 0"/></svg></div><div class="tn-a">AH</div></div></div>
+    <div class="sc">
+      <!-- Big actions -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:6px 14px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 2px;border-radius:12px;background:#fff;border:1px solid #E5E7EB"><div style="width:38px;height:38px;border-radius:11px;background:#F3F4F6;display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="#2563EB" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg></div><span style="font-size:9px;font-weight:600;color:#333">Transfer</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 2px;border-radius:12px;background:#fff;border:1px solid #E5E7EB"><div style="width:38px;height:38px;border-radius:11px;background:#F3F4F6;display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="#10B981" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/></svg></div><span style="font-size:9px;font-weight:600;color:#333">Pay</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 2px;border-radius:12px;background:#fff;border:1px solid #E5E7EB"><div style="width:38px;height:38px;border-radius:11px;background:#F3F4F6;display:flex;align-items:center;justify-content:center"><div style="width:17px;height:17px;border-radius:3px;background:#D1D5DB"></div></div><span style="font-size:9px;font-weight:600;color:#333">Top-Up</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 2px;border-radius:12px;background:#fff;border:1px solid #E5E7EB"><div style="width:38px;height:38px;border-radius:11px;background:#F3F4F6;display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="#EC4899" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg></div><span style="font-size:9px;font-weight:600;color:#333">QR</span></div>
       </div>
-    </div>
-    <div class="scroll">
-
-      <!-- Big Actions -->
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px;padding:8px 14px">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:14px 3px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
-          <div style="width:40px;height:40px;border-radius:12px;background:#F3F4F6;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#2563EB" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg></div>
-          <span style="font-size:10px;font-weight:600;color:#333">Transfer</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:14px 3px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
-          <div style="width:40px;height:40px;border-radius:12px;background:#F3F4F6;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#10B981" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/></svg></div>
-          <span style="font-size:10px;font-weight:600;color:#333">Pay</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:14px 3px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
-          <div style="width:40px;height:40px;border-radius:12px;background:#F3F4F6;display:flex;align-items:center;justify-content:center"><div style="width:18px;height:18px;border-radius:4px;background:#D1D5DB"></div></div>
-          <span style="font-size:10px;font-weight:600;color:#333">Top-Up</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:14px 3px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
-          <div style="width:40px;height:40px;border-radius:12px;background:#F3F4F6;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#EC4899" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg></div>
-          <span style="font-size:10px;font-weight:600;color:#333">QR</span>
-        </div>
-      </div>
-
       <!-- Mini balance -->
-      <div style="margin:6px 14px;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center">
-        <div><div style="font-size:10px;color:#999">Total Balance</div><div style="font-size:19px;font-weight:800;color:#111">1,245,800 ֏</div></div>
+      <div style="margin:5px 14px;padding:11px 13px;border-radius:12px;background:#fff;border:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center">
+        <div><div style="font-size:9px;color:#999">Total Balance</div><div style="font-size:18px;font-weight:800;color:#111">1,245,800 ֏</div></div>
         <span style="font-size:10px;font-weight:600;color:#2563EB">Details →</span>
       </div>
-
       <!-- Stories -->
-      <div class="fmt" style="color:#7C3AED">◉ STORIES STRIP — tap to view</div>
-      <div id="stories-strip" class="hscroll" style="display:flex;gap:10px;padding:6px 14px"></div>
-
+      <div class="fm" style="color:#7C3AED">◉ STORIES STRIP — tap to view</div>
+      <div id="b-st" class="hs" style="display:flex;gap:9px;padding:5px 14px"></div>
       <!-- Recipients -->
-      <div class="sec"><h3>Send Again</h3><span class="lnk">All →</span></div>
-      <div class="hscroll" style="display:flex;gap:12px;padding:2px 14px 8px">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:42px;height:42px;border-radius:50%;background:#818CF8;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff">AP</div><span style="font-size:9px;color:#999">Armen</span></div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:42px;height:42px;border-radius:50%;background:#F472B6;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff">MG</div><span style="font-size:9px;color:#999">Mane</span></div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:42px;height:42px;border-radius:50%;background:#34D399;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff">GH</div><span style="font-size:9px;color:#999">Gor</span></div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:42px;height:42px;border-radius:50%;background:#FB923C;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff">NA</div><span style="font-size:9px;color:#999">Nare</span></div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:42px;height:42px;border-radius:50%;background:#F3F4F6;border:1.5px dashed #D1D5DB;display:flex;align-items:center;justify-content:center;font-size:18px;color:#999">+</div><span style="font-size:9px;color:#999">Add</span></div>
+      <div class="sh"><h3>Send Again</h3><span class="lk">All →</span></div>
+      <div class="hs" style="display:flex;gap:10px;padding:2px 14px 6px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:40px;height:40px;border-radius:50%;background:#818CF8;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff">AP</div><span style="font-size:8px;color:#999">Armen</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:40px;height:40px;border-radius:50%;background:#F472B6;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff">MG</div><span style="font-size:8px;color:#999">Mane</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:40px;height:40px;border-radius:50%;background:#34D399;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff">GH</div><span style="font-size:8px;color:#999">Gor</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:40px;height:40px;border-radius:50%;background:#FB923C;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff">NA</div><span style="font-size:8px;color:#999">Nare</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:40px;height:40px;border-radius:50%;background:#F3F4F6;border:1.5px dashed #D1D5DB;display:flex;align-items:center;justify-content:center;font-size:16px;color:#999">+</div><span style="font-size:8px;color:#999">Add</span></div>
       </div>
-
       <!-- Upcoming -->
-      <div class="sec"><h3>Upcoming Payments</h3></div>
-      <div class="wcard">
-        <div class="txr"><div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg></div><div class="txd"><div class="txn">Ucom Mobile</div><div class="txt">Due: Mar 5</div></div><div class="txa">−6,000 ֏</div></div>
-        <div class="sep"></div>
-        <div class="txr"><div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><rect x="5" y="2" width="10" height="16" rx="2"/><path d="M9 15h2"/></svg></div><div class="txd"><div class="txn">Netflix</div><div class="txt">Due: Mar 10</div></div><div class="txa">−4,500 ֏</div></div>
-        <div class="sep"></div>
-        <div class="txr"><div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M3 8l7-5 7 5"/><path d="M5 7v8a1 1 0 001 1h3v-4h2v4h3a1 1 0 001-1V7"/></svg></div><div class="txd"><div class="txn">Rent Payment</div><div class="txt">Due: Mar 15</div></div><div class="txa">−85,000 ֏</div></div>
+      <div class="sh"><h3>Upcoming Payments</h3></div>
+      <div class="wc">
+        <div class="tr"><div class="tx"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg></div><div class="td"><div class="tn2">Ucom Mobile</div><div class="tt">Due: Mar 5</div></div><div class="ta">−6,000 ֏</div></div>
+        <div class="sp"></div>
+        <div class="tr"><div class="tx"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><rect x="5" y="2" width="10" height="16" rx="2"/><path d="M9 15h2"/></svg></div><div class="td"><div class="tn2">Netflix</div><div class="tt">Due: Mar 10</div></div><div class="ta">−4,500 ֏</div></div>
+        <div class="sp"></div>
+        <div class="tr"><div class="tx"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M3 8l7-5 7 5"/><path d="M5 7v8a1 1 0 001 1h3v-4h2v4h3a1 1 0 001-1V7"/></svg></div><div class="td"><div class="tn2">Rent</div><div class="tt">Due: Mar 15</div></div><div class="ta">−85,000 ֏</div></div>
       </div>
-      <div style="height:14px"></div>
+      <div style="height:12px"></div>
     </div>
-    <div class="tbar">
-      <div class="tbi on"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7-5 7 5"/><path d="M5 7v8a1 1 0 001 1h3v-4h2v4h3a1 1 0 001-1V7"/></svg>Home</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg>Payments</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/><path d="M5 12h4"/></svg>Cards</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg>History</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="7" r="3.5"/><path d="M4 17a7 7 0 0112 0"/></svg>Profile</div>
-    </div>
+    <div class="tb"><div class="ti on"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7-5 7 5"/><path d="M5 7v8a1 1 0 001 1h3v-4h2v4h3a1 1 0 001-1V7"/></svg>Home</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg>Payments</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/><path d="M5 12h4"/></svg>Cards</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg>History</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="7" r="3.5"/><path d="M4 17a7 7 0 0112 0"/></svg>Profile</div></div>
   </div></div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════
-     CONCEPT C — ADAPTIVE / AI
-     ══════════════════════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════
+     C — ADAPTIVE / AI
+     ═══════════════════════════════════════ -->
 <div class="col">
   <div class="clbl"><div class="tg">CONCEPT C</div><h2>Adaptive / AI</h2><div class="sb">Contextual Intelligence</div></div>
-  <div class="fbadge" style="background:rgba(16,185,129,.12);color:#6EE7B7;border:1px solid rgba(16,185,129,.2)">▣ Inline Cards</div>
+  <div class="fb" style="background:rgba(16,185,129,.12);color:#6EE7B7;border:1px solid rgba(16,185,129,.2)">▣ Inline Cards</div>
   <div class="device"><div class="notch"></div><div class="screen">
-    <div class="sbar"><span>9:41</span><div class="sbar-r"><div class="pill"></div><div class="batt"></div></div></div>
-    <div class="tnav">
-      <div><div class="tn-greet">Good morning</div><div class="tn-name">Ani Harutyunyan</div></div>
-      <div class="tn-right">
-        <div class="tn-btn"><svg viewBox="0 0 20 20" fill="none" stroke="#555" stroke-width="1.6"><path d="M14 7A4 4 0 006 7c0 5-2 6.5-2 6.5h12S14 12 14 7"/><path d="M11.5 15a1.5 1.5 0 01-3 0"/></svg></div>
-        <div class="tn-av">AH</div>
+    <div class="sb"><span>9:41</span><div class="sb-r"><i class="p"></i><i class="b"></i></div></div>
+    <div class="tn"><div><div class="tn-g">Good morning</div><div class="tn-n">Ani Harutyunyan</div></div><div class="tn-r"><div class="tn-b"><svg viewBox="0 0 20 20" fill="none" stroke="#555" stroke-width="1.6"><path d="M14 7A4 4 0 006 7c0 5-2 6.5-2 6.5h12S14 12 14 7"/><path d="M11.5 15a1.5 1.5 0 01-3 0"/></svg></div><div class="tn-a">AH</div></div></div>
+    <div class="sc">
+      <!-- AI bar -->
+      <div style="margin:6px 14px;padding:9px 11px;border-radius:11px;background:#F0FDF4;border:1px solid #A7F3D0;display:flex;align-items:center;gap:8px">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#059669" stroke-width="1.4"><path d="M10 2l1.5 5.5L17 9l-5.5 1.5L10 16l-1.5-5.5L3 9l5.5-1.5z"/></svg>
+        <div><div style="font-size:7px;font-weight:700;color:#059669;letter-spacing:.5px;text-transform:uppercase">AI Insight</div><div style="font-size:10px;font-weight:600;color:#065F46;margin-top:1px">Spending is 15% lower than last month</div></div>
       </div>
-    </div>
-    <div class="scroll">
-
-      <!-- AI Bar -->
-      <div style="margin:8px 14px;padding:10px 12px;border-radius:12px;background:#F0FDF4;border:1px solid #A7F3D0;display:flex;align-items:center;gap:9px">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#059669" stroke-width="1.4"><path d="M10 2l1.5 5.5L17 9l-5.5 1.5L10 16l-1.5-5.5L3 9l5.5-1.5z"/></svg>
-        <div><div style="font-size:8px;font-weight:700;color:#059669;letter-spacing:.5px;text-transform:uppercase">AI Insight</div><div style="font-size:11px;font-weight:600;color:#065F46;margin-top:1px">Spending is 15% lower than last month</div></div>
-      </div>
-
       <!-- Balance -->
-      <div style="margin:6px 14px;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center">
-        <div><div style="font-size:10px;color:#999">Total Balance</div><div style="font-size:19px;font-weight:800;color:#111">1,245,800 ֏</div></div>
+      <div style="margin:5px 14px;padding:11px 13px;border-radius:12px;background:#fff;border:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center">
+        <div><div style="font-size:9px;color:#999">Total Balance</div><div style="font-size:18px;font-weight:800;color:#111">1,245,800 ֏</div></div>
         <span style="font-size:10px;font-weight:600;color:#2563EB">Details →</span>
       </div>
-
-      <!-- AI Suggested Actions -->
-      <div class="sec"><h3>Suggested for You</h3><span class="lnk" style="color:#059669">✨ AI</span></div>
-      <div style="display:flex;justify-content:space-around;padding:4px 14px 6px">
-        <div class="qa"><div class="qa-ic" style="border-color:#A7F3D0;background:#F0FDF4"><div style="width:16px;height:16px;border-radius:4px;background:rgba(0,0,0,.06)"></div></div><span>→ Mane</span></div>
-        <div class="qa"><div class="qa-ic" style="border-color:#FDE68A;background:#FEF3C7"><div style="width:16px;height:16px;border-radius:4px;background:rgba(0,0,0,.06)"></div></div><span>Ucom</span></div>
-        <div class="qa"><div class="qa-ic" style="border-color:#BFDBFE;background:#EFF6FF"><div style="width:16px;height:16px;border-radius:4px;background:rgba(0,0,0,.06)"></div></div><span>Card Bill</span></div>
-        <div class="qa"><div class="qa-ic" style="border-color:#DDD6FE;background:#F5F3FF"><div style="width:16px;height:16px;border-radius:4px;background:rgba(0,0,0,.06)"></div></div><span>QR Pay</span></div>
+      <!-- Suggested -->
+      <div class="sh"><h3>Suggested for You</h3><span class="lk" style="color:#059669">✨ AI</span></div>
+      <div style="display:flex;justify-content:space-around;padding:3px 14px 5px">
+        <div class="qa"><div class="qi" style="background:#F0FDF4;border-color:#A7F3D0"><div style="width:14px;height:14px;border-radius:3px;background:rgba(0,0,0,.06)"></div></div><span>→ Mane</span></div>
+        <div class="qa"><div class="qi" style="background:#FEF3C7;border-color:#FDE68A"><div style="width:14px;height:14px;border-radius:3px;background:rgba(0,0,0,.06)"></div></div><span>Ucom</span></div>
+        <div class="qa"><div class="qi" style="background:#EFF6FF;border-color:#BFDBFE"><div style="width:14px;height:14px;border-radius:3px;background:rgba(0,0,0,.06)"></div></div><span>Card Bill</span></div>
+        <div class="qa"><div class="qi" style="background:#F5F3FF;border-color:#DDD6FE"><div style="width:14px;height:14px;border-radius:3px;background:rgba(0,0,0,.06)"></div></div><span>QR Pay</span></div>
       </div>
-
-      <!-- Inline Cards -->
-      <div style="display:flex;justify-content:space-between;align-items:center;margin:8px 14px 2px">
-        <span class="fmt" style="color:#059669;margin:0;padding:0">▣ INLINE CARDS — swipe to dismiss</span>
-        <button id="c-reset" class="reset-btn" style="display:none" onclick="resetCards()">Reset ↺</button>
-      </div>
-
+      <!-- Inline cards -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin:6px 14px 1px"><span class="fm" style="color:#059669;margin:0;padding:0">▣ INLINE CARDS — tap ✕</span><button id="c-rb" class="rbtn" style="display:none" onclick="cReset()">Reset ↺</button></div>
       <div id="c-cards">
-        <div class="icard" data-card="1">
-          <div style="width:34px;height:34px;border-radius:10px;background:#FEF3C7;display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:14px;height:14px;border-radius:3px;background:rgba(0,0,0,.08)"></div></div>
-          <div style="flex:1"><div style="font-size:8px;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:.3px;margin-bottom:2px">⏰ Upcoming Bill</div><div style="font-size:12px;font-weight:700;color:#111;margin-bottom:1px">Ucom — Mar 5, 6,000 ֏</div><div style="font-size:10px;color:#999;line-height:1.4">Based on your payment history, this bill is due soon.</div><span style="font-size:10px;font-weight:600;color:#2563EB;margin-top:5px;display:inline-block">Pay Now →</span></div>
-          <div class="dismiss" onclick="dismissCard(this)"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 5l10 10M15 5L5 15"/></svg></div>
-        </div>
-        <div class="icard" data-card="2">
-          <div style="width:34px;height:34px;border-radius:10px;background:#D1FAE5;display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:14px;height:14px;border-radius:3px;background:rgba(0,0,0,.08)"></div></div>
-          <div style="flex:1"><div style="font-size:8px;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:.3px;margin-bottom:2px">💰 Saving Opportunity</div><div style="font-size:12px;font-weight:700;color:#111;margin-bottom:1px">You saved 42,000 ֏ this month</div><div style="font-size:10px;color:#999;line-height:1.4">You're ahead of pace — move to savings?</div><span style="font-size:10px;font-weight:600;color:#2563EB;margin-top:5px;display:inline-block">Transfer →</span></div>
-          <div class="dismiss" onclick="dismissCard(this)"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 5l10 10M15 5L5 15"/></svg></div>
-        </div>
-        <div class="icard" data-card="3">
-          <div style="width:34px;height:34px;border-radius:10px;background:#EFF6FF;display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:14px;height:14px;border-radius:3px;background:rgba(0,0,0,.08)"></div></div>
-          <div style="flex:1"><div style="font-size:8px;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:.3px;margin-bottom:2px">🎯 Personalized Offer</div><div style="font-size:12px;font-weight:700;color:#111;margin-bottom:1px">Personal Loan at 9.5%</div><div style="font-size:10px;color:#999;line-height:1.4">Pre-approved based on your account history.</div><span style="font-size:10px;font-weight:600;color:#2563EB;margin-top:5px;display:inline-block">Learn More →</span></div>
-          <div class="dismiss" onclick="dismissCard(this)"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 5l10 10M15 5L5 15"/></svg></div>
-        </div>
+        <div class="ic" data-id="1"><div style="width:32px;height:32px;border-radius:9px;background:#FEF3C7;display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:13px;height:13px;border-radius:3px;background:rgba(0,0,0,.08)"></div></div><div style="flex:1"><div style="font-size:7px;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:.3px;margin-bottom:1px">⏰ Upcoming Bill</div><div style="font-size:11px;font-weight:700;color:#111;margin-bottom:1px">Ucom — Mar 5, 6,000 ֏</div><div style="font-size:9px;color:#999;line-height:1.3">Based on your payment history, this bill is due soon.</div><span style="font-size:9px;font-weight:600;color:#2563EB;margin-top:4px;display:inline-block">Pay Now →</span></div><button class="dm" onclick="cDismiss(this)"><svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 5l10 10M15 5L5 15"/></svg></button></div>
+        <div class="ic" data-id="2"><div style="width:32px;height:32px;border-radius:9px;background:#D1FAE5;display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:13px;height:13px;border-radius:3px;background:rgba(0,0,0,.08)"></div></div><div style="flex:1"><div style="font-size:7px;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:.3px;margin-bottom:1px">💰 Saving Opportunity</div><div style="font-size:11px;font-weight:700;color:#111;margin-bottom:1px">You saved 42,000 ֏ this month</div><div style="font-size:9px;color:#999;line-height:1.3">You're ahead of pace — move to savings?</div><span style="font-size:9px;font-weight:600;color:#2563EB;margin-top:4px;display:inline-block">Transfer →</span></div><button class="dm" onclick="cDismiss(this)"><svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 5l10 10M15 5L5 15"/></svg></button></div>
+        <div class="ic" data-id="3"><div style="width:32px;height:32px;border-radius:9px;background:#EFF6FF;display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:13px;height:13px;border-radius:3px;background:rgba(0,0,0,.08)"></div></div><div style="flex:1"><div style="font-size:7px;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:.3px;margin-bottom:1px">🎯 Personalized Offer</div><div style="font-size:11px;font-weight:700;color:#111;margin-bottom:1px">Personal Loan at 9.5%</div><div style="font-size:9px;color:#999;line-height:1.3">Pre-approved based on your account history.</div><span style="font-size:9px;font-weight:600;color:#2563EB;margin-top:4px;display:inline-block">Learn More →</span></div><button class="dm" onclick="cDismiss(this)"><svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 5l10 10M15 5L5 15"/></svg></button></div>
       </div>
-      <div id="c-empty" class="empty-state" style="display:none">
-        <p>All caught up! No suggestions right now.</p>
-        <button class="reset-btn" onclick="resetCards()">Reset cards ↺</button>
+      <div id="c-empty" class="empty"><p>All caught up!</p><button class="rbtn" onclick="cReset()">Reset cards ↺</button></div>
+      <!-- Smart feed -->
+      <div class="sh"><h3>Smart Feed ✨</h3><span class="lk">All →</span></div>
+      <div class="wc">
+        <div class="tr"><div class="tx"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg></div><div class="td"><div class="tn2">SAS Supermarket</div><div class="tt">Today · <span style="color:#059669">Groceries</span></div></div><div class="ta">−12,400 ֏</div></div>
+        <div class="sp"></div>
+        <div class="tr"><div class="tx"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 10h10M12 6l4 4-4 4"/></svg></div><div class="td"><div class="tn2">Salary Deposit</div><div class="tt">Yesterday</div></div><div class="ta pos">+350,000 ֏</div></div>
       </div>
-
-      <!-- Smart Feed -->
-      <div class="sec"><h3>Smart Feed ✨</h3><span class="lnk">All →</span></div>
-      <div class="wcard">
-        <div class="txr"><div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg></div><div class="txd"><div class="txn">SAS Supermarket</div><div class="txt">Today, 14:32 · <span style="color:#059669">Groceries</span></div></div><div class="txa">−12,400 ֏</div></div>
-        <div class="sep"></div>
-        <div class="txr"><div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><path d="M5 10h10M12 6l4 4-4 4"/></svg></div><div class="txd"><div class="txn">Salary Deposit</div><div class="txt">Yesterday, 10:00</div></div><div class="txa pos">+350,000 ֏</div></div>
-      </div>
-      <div style="height:14px"></div>
+      <div style="height:12px"></div>
     </div>
-    <div class="tbar">
-      <div class="tbi on"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7-5 7 5"/><path d="M5 7v8a1 1 0 001 1h3v-4h2v4h3a1 1 0 001-1V7"/></svg>Home</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg>Payments</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/><path d="M5 12h4"/></svg>Cards</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg>History</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="7" r="3.5"/><path d="M4 17a7 7 0 0112 0"/></svg>Profile</div>
-    </div>
+    <div class="tb"><div class="ti on"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7-5 7 5"/><path d="M5 7v8a1 1 0 001 1h3v-4h2v4h3a1 1 0 001-1V7"/></svg>Home</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg>Payments</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/><path d="M5 12h4"/></svg>Cards</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg>History</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="7" r="3.5"/><path d="M4 17a7 7 0 0112 0"/></svg>Profile</div></div>
   </div></div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════
-     CONCEPT D — SUPER-APP
-     ══════════════════════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════
+     D — SUPER-APP (Portfolio Hero)
+     ═══════════════════════════════════════ -->
 <div class="col">
   <div class="clbl"><div class="tg">CONCEPT D</div><h2>Super-App</h2><div class="sb">Banking + Lifestyle Hub</div></div>
-  <div class="fbadge" style="background:rgba(245,158,11,.12);color:#FCD34D;border:1px solid rgba(245,158,11,.2)">⇄ Carousel + Tabs</div>
+  <div class="fb" style="background:rgba(245,158,11,.12);color:#FCD34D;border:1px solid rgba(245,158,11,.2)">⇄ Portfolio Hero + Tabs</div>
   <div class="device"><div class="notch"></div><div class="screen">
-    <div class="sbar"><span>9:41</span><div class="sbar-r"><div class="pill"></div><div class="batt"></div></div></div>
-    <div class="tnav">
-      <div><div class="tn-greet">Good morning</div><div class="tn-name">Ani Harutyunyan</div></div>
-      <div class="tn-right">
-        <div class="tn-btn"><svg viewBox="0 0 20 20" fill="none" stroke="#555" stroke-width="1.6"><path d="M14 7A4 4 0 006 7c0 5-2 6.5-2 6.5h12S14 12 14 7"/><path d="M11.5 15a1.5 1.5 0 01-3 0"/></svg></div>
-        <div class="tn-av">AH</div>
+    <div class="sb"><span>9:41</span><div class="sb-r"><i class="p"></i><i class="b"></i></div></div>
+    <div class="tn"><div><div class="tn-g">Good morning</div><div class="tn-n">Ani Harutyunyan</div></div><div class="tn-r"><div class="tn-b"><svg viewBox="0 0 20 20" fill="none" stroke="#555" stroke-width="1.6"><path d="M14 7A4 4 0 006 7c0 5-2 6.5-2 6.5h12S14 12 14 7"/><path d="M11.5 15a1.5 1.5 0 01-3 0"/></svg></div><div class="tn-a">AH</div></div></div>
+    <div class="sc">
+      <!-- Portfolio hero (dark) -->
+      <div style="margin:6px 14px;padding:14px 13px 10px;border-radius:16px;background:#1C1C1E;color:#fff;position:relative;overflow:hidden">
+        <div style="position:absolute;top:-25px;right:-15px;width:80px;height:80px;border-radius:50%;background:rgba(16,185,129,.07)"></div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+          <div>
+            <div style="font-size:8px;font-weight:600;letter-spacing:1.5px;color:rgba(255,255,255,.4);text-transform:uppercase;margin-bottom:4px">Portfolio</div>
+            <div style="font-size:22px;font-weight:800;letter-spacing:-.4px">֏ 318,400</div>
+            <div style="font-size:10px;color:#10B981;font-weight:600;margin-top:2px">▲ +2.4% this week</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:8px;font-weight:600;letter-spacing:1.5px;color:rgba(255,255,255,.4);text-transform:uppercase;margin-bottom:4px">Crypto</div>
+            <div style="font-size:16px;font-weight:800">$48.20</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:1px">0.0012 BTC</div>
+          </div>
+        </div>
+        <div id="d-tabs" style="display:flex;gap:5px"></div>
       </div>
-    </div>
-    <div class="scroll">
-
-      <!-- Balance -->
-      <div style="margin:8px 14px;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center">
-        <div><div style="font-size:10px;color:#999">Total Balance</div><div style="font-size:19px;font-weight:800;color:#111">1,245,800 ֏</div></div>
-        <span style="font-size:10px;font-weight:600;color:#2563EB">Details →</span>
+      <!-- Banking balance -->
+      <div style="margin:5px 14px;padding:11px 13px;border-radius:12px;background:#fff;border:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center">
+        <div><div style="font-size:8px;font-weight:600;letter-spacing:1px;color:#999;text-transform:uppercase;margin-bottom:2px">Banking Balance</div><div style="font-size:18px;font-weight:800;color:#111">֏ 2,450,000</div></div>
+        <span style="font-size:10px;font-weight:600;color:#2563EB">3 accounts ›</span>
       </div>
-
       <!-- Quick actions -->
-      <div style="display:flex;justify-content:space-around;padding:4px 14px 6px">
-        <div class="qa"><div class="qa-ic"><svg viewBox="0 0 20 20" fill="none" stroke="#2563EB" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg></div><span>Transfer</span></div>
-        <div class="qa"><div class="qa-ic"><svg viewBox="0 0 20 20" fill="none" stroke="#10B981" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/></svg></div><span>Pay</span></div>
-        <div class="qa"><div class="qa-ic"><div style="width:18px;height:18px;border-radius:4px;background:#D1D5DB"></div></div><span>Top-Up</span></div>
-        <div class="qa"><div class="qa-ic"><svg viewBox="0 0 20 20" fill="none" stroke="#999" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg></div><span>QR</span></div>
+      <div style="display:flex;justify-content:space-around;padding:6px 10px 4px">
+        <div class="qa"><div class="qi"><svg viewBox="0 0 20 20" fill="none" stroke="#10B981" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/></svg></div><span>Pay</span></div>
+        <div class="qa"><div class="qi"><svg viewBox="0 0 20 20" fill="none" stroke="#2563EB" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg></div><span>Transfer</span></div>
+        <div class="qa"><div class="qi"><div style="width:17px;height:17px;border-radius:3px;background:#D1D5DB"></div></div><span>Split</span></div>
+        <div class="qa"><div class="qi"><svg viewBox="0 0 20 20" fill="none" stroke="#999" stroke-width="1.4"><path d="M17 3L9 11M17 3l-4 14-3-6-6-3z"/></svg></div><span>Travel</span></div>
+        <div class="qa"><div class="qi"><svg viewBox="0 0 20 20" fill="none" stroke="#F59E0B" stroke-width="1.6"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" transform="scale(.85) translate(1.5,1.5)"/></svg></div><span>Exchange</span></div>
       </div>
-
-      <!-- INTERACTIVE TABS -->
-      <div id="d-tabs" class="hscroll" style="display:flex;gap:5px;padding:6px 14px"></div>
-
-      <!-- Dynamic content area -->
-      <div id="d-widget"></div>
-
-      <div class="fmt" style="color:#EA580C">⇄ CAROUSEL</div>
-      <div id="d-carousel" class="hscroll" style="display:flex;gap:8px;padding:4px 14px 8px"></div>
-
-      <div id="d-list-head" class="sec"></div>
-      <div id="d-list" class="wcard" style="margin:0 14px"></div>
-
-      <div style="height:14px"></div>
+      <!-- Dynamic -->
+      <div id="d-w"></div>
+      <div class="fm" style="color:#EA580C">⇄ CAROUSEL</div>
+      <div id="d-c" class="hs" style="display:flex;gap:7px;padding:3px 14px 6px"></div>
+      <div id="d-lh" class="sh"></div>
+      <div id="d-lb" class="wc" style="margin:0 14px"></div>
+      <div style="height:12px"></div>
     </div>
-    <div class="tbar">
-      <div class="tbi on"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7-5 7 5"/><path d="M5 7v8a1 1 0 001 1h3v-4h2v4h3a1 1 0 001-1V7"/></svg>Home</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg>Payments</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/><path d="M5 12h4"/></svg>Cards</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg>History</div>
-      <div class="tbi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="7" r="3.5"/><path d="M4 17a7 7 0 0112 0"/></svg>Profile</div>
-    </div>
+    <div class="tb"><div class="ti on"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7-5 7 5"/><path d="M5 7v8a1 1 0 001 1h3v-4h2v4h3a1 1 0 001-1V7"/></svg>Home</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 14L3 11l3-3"/><path d="M3 11h11"/><path d="M14 6l3 3-3 3"/><path d="M17 9H6"/></svg>Payments</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 8h16"/><path d="M5 12h4"/></svg>Cards</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg>History</div><div class="ti"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="7" r="3.5"/><path d="M4 17a7 7 0 0112 0"/></svg>Profile</div></div>
   </div></div>
 </div>
 
-</div><!-- /grid -->
+</div>
 
 <script>
-// ═══════════════════════════════════════════════════════
-// CONCEPT A — Balance Toggle
-// ═══════════════════════════════════════════════════════
-let balVisible = true;
-function toggleBalA() {
-  balVisible = !balVisible;
-  document.getElementById('a-bal').textContent = balVisible ? '1,245,800 ֏' : '•••••••• ֏';
-  document.getElementById('a-chips').style.display = balVisible ? 'flex' : 'none';
-  document.getElementById('a-eye').innerHTML = balVisible
-    ? '<path d="M2 10s3-5 8-5 8 5 8 5-3 5-8 5-8-5-8-5z"/><circle cx="10" cy="10" r="2.5"/>'
-    : '<path d="M2 2l16 16"/><path d="M6 6.5C4 8 2 10 2 10s3 5 8 5c1.5 0 2.8-.5 4-1.2"/><path d="M14 10a4 4 0 00-4-4"/>';
-  document.querySelectorAll('.a-acc div:last-child').forEach(el => {
-    el.textContent = balVisible ? el.dataset.val : '•••••';
-  });
+/* ═══ A: Balance Toggle ═══ */
+let aV=true;
+function togA(){
+  aV=!aV;
+  document.getElementById('a-bal').textContent=aV?'1,245,800 ֏':'•••••••• ֏';
+  document.getElementById('a-ch').style.display=aV?'flex':'none';
+  document.getElementById('a-eye').innerHTML=aV?'<path d="M2 10s3-5 8-5 8 5 8 5-3 5-8 5-8-5-8-5z"/><circle cx="10" cy="10" r="2.5"/>':'<path d="M2 2l16 16"/><path d="M6 6.5C4 8 2 10 2 10s3 5 8 5c1.5 0 2.8-.5 4-1.2"/><path d="M14 10a4 4 0 00-4-4"/>';
+  document.querySelectorAll('.a-ac div:last-child').forEach(e=>{e.textContent=aV?e.dataset.v:'•••••'});
 }
 
-// ═══════════════════════════════════════════════════════
-// CONCEPT B — Stories
-// ═══════════════════════════════════════════════════════
-const storiesData = [
-  { label: 'New Card', bg: '#DBEAFE', seen: false },
-  { label: 'Mortgage', bg: '#FEF3C7', seen: false },
-  { label: 'Travel', bg: '#D1FAE5', seen: false },
-  { label: 'Student', bg: '#FCE7F3', seen: true },
-  { label: 'Deposit', bg: '#EDE9FE', seen: true },
-];
-
-function renderStories() {
-  const c = document.getElementById('stories-strip');
-  c.innerHTML = storiesData.map((s, i) => `
-    <div class="story${s.seen ? ' viewed' : ''}" onclick="toggleStory(${i})">
-      <div class="story-ring ${s.seen ? 'seen' : 'active'}">
-        <div class="story-inner">
-          <div class="story-fill" style="background:${s.bg}">
-            <div style="width:16px;height:16px;border-radius:8px;background:rgba(0,0,0,.08)"></div>
-          </div>
-        </div>
-      </div>
-      <span class="story-lbl">${s.label}</span>
-    </div>
-  `).join('');
+/* ═══ B: Stories ═══ */
+const bS=[{l:'New Card',bg:'#DBEAFE',s:false},{l:'Mortgage',bg:'#FEF3C7',s:false},{l:'Travel',bg:'#D1FAE5',s:false},{l:'Student',bg:'#FCE7F3',s:true},{l:'Deposit',bg:'#EDE9FE',s:true}];
+function bRender(){
+  document.getElementById('b-st').innerHTML=bS.map((s,i)=>`<div class="st" onclick="bS[${i}].s=!bS[${i}].s;bRender()"><div class="sr ${s.s?'s':'a'}"><div class="si"><div class="sf" style="background:${s.bg}"><div style="width:15px;height:15px;border-radius:8px;background:rgba(0,0,0,.07)"></div></div></div></div><span class="sl" style="color:${s.s?'#bbb':'#666'}">${s.l}</span></div>`).join('');
 }
+bRender();
 
-function toggleStory(i) {
-  storiesData[i].seen = !storiesData[i].seen;
-  renderStories();
-}
+/* ═══ C: Dismiss Cards ═══ */
+const cOrig=document.getElementById('c-cards').innerHTML;
+let cN=3;
+function cDismiss(b){const c=b.closest('.ic');c.classList.add('gone');cN--;setTimeout(()=>{c.remove();cCheck()},400)}
+function cCheck(){document.getElementById('c-rb').style.display=cN<3?'inline':'none';if(cN===0)document.getElementById('c-empty').style.display='block'}
+function cReset(){document.getElementById('c-cards').innerHTML=cOrig;document.getElementById('c-empty').style.display='none';document.getElementById('c-rb').style.display='none';cN=3}
 
-renderStories();
-
-// ═══════════════════════════════════════════════════════
-// CONCEPT C — Dismissable Cards
-// ═══════════════════════════════════════════════════════
-let cardCount = 3;
-const cardHTML = document.getElementById('c-cards').innerHTML;
-
-function dismissCard(btn) {
-  const card = btn.closest('.icard');
-  card.classList.add('dismissed');
-  cardCount--;
-  setTimeout(() => { card.remove(); checkEmpty(); }, 400);
-}
-
-function checkEmpty() {
-  const reset = document.getElementById('c-reset');
-  if (cardCount === 0) {
-    document.getElementById('c-empty').style.display = 'block';
-    reset.style.display = 'none';
-  } else if (cardCount < 3) {
-    reset.style.display = 'inline';
-  }
-}
-
-function resetCards() {
-  document.getElementById('c-cards').innerHTML = cardHTML;
-  document.getElementById('c-empty').style.display = 'none';
-  document.getElementById('c-reset').style.display = 'none';
-  cardCount = 3;
-}
-
-// ═══════════════════════════════════════════════════════
-// CONCEPT D — Interactive Tabs
-// ═══════════════════════════════════════════════════════
-const dTabs = ['All', 'Invest', 'Travel', 'Subscriptions'];
-let dActive = 'All';
-
-const dData = {
-  All: {
-    widget: `<div style="margin:6px 14px;padding:12px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
-      <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:12px;font-weight:700;color:#111">📈 Investments</span><span style="font-size:11px;font-weight:700;color:#10B981">+2.4% ↑</span></div>
-      <div style="display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid #F3F4F6"><span style="font-size:11px;color:#555">ACBA Bonds</span><span style="font-size:11px;font-weight:700;color:#10B981">+1.8%</span></div>
-      <div style="display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid #F3F4F6"><span style="font-size:11px;color:#555">S&amp;P 500 ETF</span><span style="font-size:11px;font-weight:700;color:#10B981">+3.2%</span></div>
-      <div style="display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid #F3F4F6"><span style="font-size:11px;color:#555">Gold Fund</span><span style="font-size:11px;font-weight:700;color:#EF4444">−0.5%</span></div>
-    </div>`,
-    cards: [['#DBEAFE','Travel Insurance','From ֏2,500'],['#FEF3C7','Life Insurance','Protect family'],['#D1FAE5','Subscriptions','Netflix, Spotify']],
-    listTitle: 'Active Subscriptions', listLink: 'Manage →',
-    rows: [['Netflix Premium','Renews Mar 10','−4,500 ֏'],['Spotify Family','Renews Mar 22','−3,200 ֏']]
-  },
-  Invest: {
-    widget: `<div style="margin:6px 14px;padding:12px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
-      <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:12px;font-weight:700">Portfolio Value</span><span style="font-size:11px;font-weight:700;color:#10B981">+2.4%</span></div>
-      <div style="font-size:22px;font-weight:800;color:#111;margin-bottom:8px">438,200 ֏</div>
-      <div style="display:flex;gap:4px;height:28px">
-        <div style="width:40%;border-radius:4px;background:#2563EB"></div>
-        <div style="width:25%;border-radius:4px;background:#10B981"></div>
-        <div style="width:20%;border-radius:4px;background:#F59E0B"></div>
-        <div style="width:15%;border-radius:4px;background:#D1D5DB"></div>
-      </div>
-      <div style="display:flex;gap:8px;margin-top:6px">
-        <span style="display:flex;align-items:center;gap:3px;font-size:8px;color:#666"><span style="width:6px;height:6px;border-radius:2px;background:#2563EB;display:inline-block"></span>Bonds</span>
-        <span style="display:flex;align-items:center;gap:3px;font-size:8px;color:#666"><span style="width:6px;height:6px;border-radius:2px;background:#10B981;display:inline-block"></span>Equity</span>
-        <span style="display:flex;align-items:center;gap:3px;font-size:8px;color:#666"><span style="width:6px;height:6px;border-radius:2px;background:#F59E0B;display:inline-block"></span>Gold</span>
-        <span style="display:flex;align-items:center;gap:3px;font-size:8px;color:#666"><span style="width:6px;height:6px;border-radius:2px;background:#D1D5DB;display:inline-block"></span>Cash</span>
-      </div>
-    </div>`,
-    cards: [['#DBEAFE','ACBA Bonds','7.2% annual'],['#D1FAE5','Green Fund','ESG investing'],['#FEF3C7','Gold ETF','Hedge inflation']],
-    listTitle: 'Your Holdings', listLink: 'All →',
-    rows: [['ACBA Bonds','Purchased Jan 2026','+1.8%'],['S&P 500 ETF','Purchased Dec 2025','+3.2%']]
-  },
-  Travel: {
-    widget: `<div style="margin:6px 14px;padding:12px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
-      <div style="font-size:12px;font-weight:700;margin-bottom:6px">✈️ Upcoming Trip</div>
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div>
-          <div style="font-size:16px;font-weight:800;color:#111">Yerevan → Milan</div>
-          <div style="font-size:10px;color:#999;margin-top:2px">Mar 28 – Apr 4 · 2 travelers</div>
-        </div>
-        <div style="width:36px;height:36px;border-radius:10px;background:#F3F4F6;display:flex;align-items:center;justify-content:center">
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#2563EB" stroke-width="1.4"><path d="M17 3L9 11M17 3l-4 14-3-6-6-3z"/></svg>
-        </div>
-      </div>
-    </div>`,
-    cards: [['#DBEAFE','Travel Insurance','From ֏2,500'],['#FEF3C7','Airport Lounge','Priority Pass'],['#D1FAE5','Currency Exchange','Best EUR rates']],
-    listTitle: 'Travel Services', listLink: '→',
-    rows: [['Travel Insurance','Milan trip cover','−8,500 ֏'],['FX Alert Set','EUR < 420 ֏','Active']]
-  },
-  Subscriptions: {
-    widget: `<div style="margin:6px 14px;padding:12px;border-radius:14px;background:#fff;border:1px solid #E5E7EB">
-      <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:12px;font-weight:700">Monthly Total</span><span style="font-size:14px;font-weight:800;color:#111">−13,700 ֏</span></div>
-      <div style="display:flex;gap:3px;height:8px;border-radius:4px;overflow:hidden">
-        <div style="width:33%;background:#EF4444"></div>
-        <div style="width:23%;background:#10B981"></div>
-        <div style="width:44%;background:#2563EB"></div>
-      </div>
-      <div style="display:flex;gap:8px;margin-top:6px">
-        <span style="display:flex;align-items:center;gap:3px;font-size:8px;color:#666"><span style="width:6px;height:6px;border-radius:2px;background:#EF4444;display:inline-block"></span>Netflix</span>
-        <span style="display:flex;align-items:center;gap:3px;font-size:8px;color:#666"><span style="width:6px;height:6px;border-radius:2px;background:#10B981;display:inline-block"></span>Spotify</span>
-        <span style="display:flex;align-items:center;gap:3px;font-size:8px;color:#666"><span style="width:6px;height:6px;border-radius:2px;background:#2563EB;display:inline-block"></span>Ucom</span>
-      </div>
-    </div>`,
-    cards: [['#FEE2E2','YouTube Premium','Ad-free viewing'],['#D1FAE5','Duolingo Plus','Learn languages'],['#EDE9FE','iCloud 200GB','Apple storage']],
-    listTitle: 'Active Subscriptions', listLink: 'Manage →',
-    rows: [['Netflix Premium','Renews Mar 10','−4,500 ֏'],['Spotify Family','Renews Mar 22','−3,200 ֏'],['Ucom Unlimited','Renews Mar 5','−6,000 ֏']]
-  }
+/* ═══ D: Super-App Tabs ═══ */
+const dT=['Invest','Crypto','BNPL','Travel'];
+let dA='Invest';
+const dD={
+  Invest:{w:`<div style="margin:5px 14px;padding:11px;border-radius:12px;background:#fff;border:1px solid #E5E7EB"><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:11px;font-weight:700">Your Holdings</span><span style="font-size:10px;font-weight:700;color:#10B981">+2.4%</span></div><div style="display:flex;gap:3px;height:24px;margin-bottom:5px"><div style="width:40%;border-radius:3px;background:#2563EB"></div><div style="width:25%;border-radius:3px;background:#10B981"></div><div style="width:20%;border-radius:3px;background:#F59E0B"></div><div style="width:15%;border-radius:3px;background:#D1D5DB"></div></div><div style="display:flex;gap:8px"><span style="display:flex;align-items:center;gap:2px;font-size:8px;color:#666"><span style="width:6px;height:6px;border-radius:2px;background:#2563EB;display:inline-block"></span>Bonds</span><span style="display:flex;align-items:center;gap:2px;font-size:8px;color:#666"><span style="width:6px;height:6px;border-radius:2px;background:#10B981;display:inline-block"></span>Equity</span><span style="display:flex;align-items:center;gap:2px;font-size:8px;color:#666"><span style="width:6px;height:6px;border-radius:2px;background:#F59E0B;display:inline-block"></span>Gold</span></div></div>`,c:[['#DBEAFE','ACBA Bonds','7.2%'],['#D1FAE5','Green Fund','ESG'],['#FEF3C7','Gold ETF','Hedge']],lt:'Investment Activity',ll:'All →',r:[['ACBA Bonds','Jan 2026','+1.8%'],['S&P 500 ETF','Dec 2025','+3.2%']]},
+  Crypto:{w:`<div style="margin:5px 14px;padding:11px;border-radius:12px;background:#fff;border:1px solid #E5E7EB"><div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:11px;font-weight:700">Crypto Wallet</span><span style="font-size:10px;font-weight:700;color:#10B981">+5.1%</span></div><div style="display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid #F3F4F6"><span style="font-size:10px;color:#555">Bitcoin</span><span style="font-size:10px;font-weight:700;color:#10B981">$48.20</span></div><div style="display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid #F3F4F6"><span style="font-size:10px;color:#555">Ethereum</span><span style="font-size:10px;font-weight:700;color:#10B981">$12.60</span></div><div style="display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid #F3F4F6"><span style="font-size:10px;color:#555">USDT</span><span style="font-size:10px;font-weight:700;color:#666">$25.00</span></div></div>`,c:[['#FEF3C7','Buy Bitcoin','From ֏1k'],['#EDE9FE','Staking','4.2% APY'],['#D1FAE5','Swap','Zero fees']],lt:'Recent Crypto',ll:'All →',r:[['BTC Purchase','Feb 28','−֏18,500'],['ETH Received','Feb 20','+$12.60']]},
+  BNPL:{w:`<div style="margin:5px 14px;padding:11px;border-radius:12px;background:#fff;border:1px solid #E5E7EB"><div style="font-size:11px;font-weight:700;margin-bottom:4px">Buy Now, Pay Later</div><div style="font-size:10px;color:#555;margin-bottom:6px">Available: <span style="font-weight:700;color:#111">֏ 500,000</span></div><div style="height:7px;border-radius:4px;background:#F3F4F6;overflow:hidden"><div style="width:35%;height:100%;background:#2563EB;border-radius:4px"></div></div><div style="font-size:8px;color:#999;margin-top:3px">35% used · ֏175k outstanding</div></div>`,c:[['#DBEAFE','Tech','0% 6mo'],['#FEF3C7','Home','Split in 4'],['#FCE7F3','Fashion','3mo free']],lt:'Active Installments',ll:'Manage →',r:[['MacBook Air M4','4/12 payments','−28k ֏/mo'],['iPhone 16 Pro','2/4 payments','−62k ֏/mo']]},
+  Travel:{w:`<div style="margin:5px 14px;padding:11px;border-radius:12px;background:#fff;border:1px solid #E5E7EB"><div style="font-size:11px;font-weight:700;margin-bottom:6px">✈️ Upcoming Trip</div><div style="display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:15px;font-weight:800;color:#111">Yerevan → Milan</div><div style="font-size:9px;color:#999;margin-top:2px">Mar 28 – Apr 4 · 2 travelers</div></div><div style="width:32px;height:32px;border-radius:8px;background:#F3F4F6;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#2563EB" stroke-width="1.4"><path d="M17 3L9 11M17 3l-4 14-3-6-6-3z"/></svg></div></div></div>`,c:[['#DBEAFE','Insurance','From ֏2.5k'],['#FEF3C7','Lounge','Priority'],['#D1FAE5','FX Rate','Best EUR']],lt:'Travel Services',ll:'→',r:[['Travel Insurance','Milan cover','−8,500 ֏'],['FX Alert','EUR<420','Active']]}
 };
-
-function renderDTabs() {
-  document.getElementById('d-tabs').innerHTML = dTabs.map(t =>
-    `<button class="cattab${t === dActive ? ' on' : ''}" onclick="switchDTab('${t}')">${t}</button>`
-  ).join('');
+function dGo(t){dA=t;dRender()}
+function dRender(){
+  document.getElementById('d-tabs').innerHTML=dT.map(t=>`<button class="ct${t===dA?' on':''}" onclick="dGo('${t}')">${t}</button>`).join('');
+  const d=dD[dA];
+  document.getElementById('d-w').innerHTML=d.w;
+  document.getElementById('d-c').innerHTML=d.c.map(([bg,t,s])=>`<div style="flex-shrink:0;width:110px;border-radius:12px;background:#fff;border:1px solid #E5E7EB;overflow:hidden"><div style="height:48px;background:${bg};display:flex;align-items:center;justify-content:center"><div style="width:20px;height:20px;border-radius:5px;background:rgba(0,0,0,.06)"></div></div><div style="padding:7px 9px"><div style="font-size:10px;font-weight:700;color:#111;margin-bottom:1px">${t}</div><div style="font-size:8px;color:#999">${s}</div></div></div>`).join('');
+  document.getElementById('d-lh').innerHTML=`<h3>${d.lt}</h3><span class="lk">${d.ll}</span>`;
+  document.getElementById('d-lb').innerHTML=d.r.map((r,i)=>`${i?'<div class="sp"></div>':''}<div class="tr"><div class="tx"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><rect x="5" y="2" width="10" height="16" rx="2"/><path d="M9 15h2"/></svg></div><div class="td"><div class="tn2">${r[0]}</div><div class="tt">${r[1]}</div></div><div class="ta${!r[2].startsWith('−')?' pos':''}">${r[2]}</div></div>`).join('');
 }
-
-function renderDContent() {
-  const d = dData[dActive];
-  document.getElementById('d-widget').innerHTML = d.widget;
-  document.getElementById('d-carousel').innerHTML = d.cards.map(([bg, title, desc]) =>
-    `<div style="flex-shrink:0;width:125px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;overflow:hidden">
-      <div style="height:56px;background:${bg};display:flex;align-items:center;justify-content:center"><div style="width:24px;height:24px;border-radius:6px;background:rgba(0,0,0,.06)"></div></div>
-      <div style="padding:8px 10px"><div style="font-size:10px;font-weight:700;color:#111;margin-bottom:1px">${title}</div><div style="font-size:8.5px;color:#999">${desc}</div></div>
-    </div>`
-  ).join('');
-  document.getElementById('d-list-head').innerHTML = `<h3>${d.listTitle}</h3><span class="lnk">${d.listLink}</span>`;
-  document.getElementById('d-list').innerHTML = d.rows.map((r, i) =>
-    `${i > 0 ? '<div class="sep"></div>' : ''}
-    <div class="txr">
-      <div class="txi"><svg viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="1.6"><rect x="5" y="2" width="10" height="16" rx="2"/><path d="M9 15h2"/></svg></div>
-      <div class="txd"><div class="txn">${r[0]}</div><div class="txt">${r[1]}</div></div>
-      <div class="txa${!r[2].startsWith('−') ? ' pos' : ''}">${r[2]}</div>
-    </div>`
-  ).join('');
-}
-
-function switchDTab(tab) {
-  dActive = tab;
-  renderDTabs();
-  renderDContent();
-}
-
-renderDTabs();
-renderDContent();
+dRender();
 </script>
-
 </body>
 </html>
